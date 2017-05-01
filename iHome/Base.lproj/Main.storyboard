@@ -72,6 +72,7 @@
                         <outlet property="PasswordTextField" destination="dbc-0G-kvf" id="5Mr-OA-ESu"/>
                         <outlet property="RegisterButton" destination="5Sz-zS-wSz" id="iqv-2Z-GZR"/>
                         <outlet property="UsernameTextField" destination="vKB-en-QMX" id="qYv-v6-UEL"/>
+                        <segue destination="J94-fD-AU9" kind="showDetail" identifier="loginSegue" id="Xhw-JQ-5Uf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -47,6 +47,7 @@ class LoginController: UIViewController {
         
         if(foundUser){
             //trigger next page.
+            performSegue(withIdentifier: "loginSegue", sender: nil)
         }else{
             alertUser(title: "Login Failed", message: "Invalid Username/Password");
         }
@@ -66,6 +67,7 @@ class LoginController: UIViewController {
             
             do{
                 try context.save();
+                alertUser(title: "Registration Successful", message: "Registration successful!");
             }catch let error as NSError{
                 //Registering new users failed
             }
@@ -81,8 +83,8 @@ class LoginController: UIViewController {
     //verifies that username and password match up with that is in the db
     //returns bool; true if login successful, false otherwise
     func verifyLogin(actualUsername: String?, expectedUsername: String, actualPassword: String?, expectedPassword: String) -> Bool{
-        var isValidLogin = verifyInput(input: actualUsername) && verifyInput(input: actualPassword) && (actualUsername == expectedUsername) && (actualPassword == expectedPassword);
-        return isValidLogin;
+        return verifyInput(input: actualUsername) && verifyInput(input: actualPassword) && (actualUsername == expectedUsername) && (actualPassword == expectedPassword);
+        
     }
     
     func verifyInput(input:String?)->Bool{
