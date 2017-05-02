@@ -36,7 +36,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="49s-va-pgf"/>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBG-um-R24"/>
                                 </connections>
                             </button>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-en-QMX">
@@ -62,16 +62,17 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="RegisterNewUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i4v-Ri-rlC"/>
+                                    <action selector="registerNewUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpb-mS-QO9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92515406850000004" green="0.92515406850000004" blue="0.92515406850000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="PasswordTextField" destination="dbc-0G-kvf" id="5Mr-OA-ESu"/>
-                        <outlet property="RegisterButton" destination="5Sz-zS-wSz" id="iqv-2Z-GZR"/>
-                        <outlet property="UsernameTextField" destination="vKB-en-QMX" id="qYv-v6-UEL"/>
+                        <outlet property="loginButton" destination="RZT-xP-uFv" id="ZpC-TX-WSR"/>
+                        <outlet property="passwordTextField" destination="dbc-0G-kvf" id="q1n-UG-fk4"/>
+                        <outlet property="registerButton" destination="5Sz-zS-wSz" id="JnE-ww-UC8"/>
+                        <outlet property="usernameTextField" destination="vKB-en-QMX" id="Tbn-1l-RRb"/>
                         <segue destination="J94-fD-AU9" kind="showDetail" identifier="loginSegue" id="Xhw-JQ-5Uf"/>
                     </connections>
                 </viewController>
@@ -125,10 +126,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLv-0M-a6z">
-                                                    <rect key="frame" x="8" y="3" width="37" height="37"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-N8-JpH">
                                                     <rect key="frame" x="53" y="11" width="314" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -136,6 +133,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blinds" translatesAutoresizingMaskIntoConstraints="NO" id="BLv-0M-a6z">
+                                                    <rect key="frame" x="8" y="7" width="29" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -160,7 +161,7 @@
         <!--View Controller-->
         <scene sceneID="3dV-Ee-ASV">
             <objects>
-                <viewController id="TOh-Ai-F4e" customClass="ViewController" customModule="iHome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootController" id="TOh-Ai-F4e" customClass="ViewController" customModule="iHome" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ctr-eE-9yi"/>
                         <viewControllerLayoutGuide type="bottom" id="bc7-Q7-bkx"/>
@@ -174,12 +175,30 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="6fm-mE-eiC"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="MenuButton" destination="6fm-mE-eiC" id="OS8-1l-LgC"/>
+                        <outlet property="menuButton" destination="6fm-mE-eiC" id="G6h-3o-UWX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0v-Fd-MyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2514" y="457"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="2mp-Wc-RcQ">
+            <objects>
+                <viewController id="wxb-ut-CCq" customClass="HomeViewController" customModule="iHome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XN5-3g-gYB"/>
+                        <viewControllerLayoutGuide type="bottom" id="dzY-db-WBT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5D0-EG-C3c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2qk-UB-fwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3274" y="453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zu7-jl-xW8">
@@ -202,5 +221,6 @@
     </scenes>
     <resources>
         <image name="Menu" width="32" height="32"/>
+        <image name="blinds" width="50" height="50"/>
     </resources>
 </document>
