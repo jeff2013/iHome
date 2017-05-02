@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -34,6 +35,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCellIdentifier") as! TableCell
         cell.TitleLabel.text = menuTitles[indexPath.row]
         cell.Icon.image = images[indexPath.row]
@@ -41,8 +43,25 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //selected
+        let cell: TableCell = tableView.cellForRow(at: indexPath) as! TableCell
+        switch cell.TitleLabel.text!{
+            case menuTitles[0]:
+                switchControllerFor(name: "Main", identifier: "HomeController", animated: true)
+                break
+            case menuTitles[1]:
+                switchControllerFor(name: "Main", identifier: "LightBulbViewController", animated: true)
+            break
+            default:
+                break
+        }
+    }
+    
+    func switchControllerFor(name: String, identifier: String, animated: Bool){
+        let revealViewController:SWRevealViewController = self.revealViewController()
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: name, bundle: nil)
+        let destinationController = mainStoryboard.instantiateViewController(withIdentifier: identifier)
+        let newFrontController = UINavigationController.init(rootViewController: destinationController)
+        revealViewController.pushFrontViewController(newFrontController, animated: animated)
     }
     
 

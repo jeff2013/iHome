@@ -10,7 +10,7 @@
 		01D12B1728FC0506DE09EC0C /* Pods_iHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84E04A75F84D7583E542B8A /* Pods_iHomeTests.framework */; };
 		47209D03A3627355AE8219F5 /* Pods_iHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE7A7D85F7A3F697B085241 /* Pods_iHome.framework */; };
 		5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E21EB7D029005FC78E /* AppDelegate.swift */; };
-		5F2846E51EB7D029005FC78E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E41EB7D029005FC78E /* ViewController.swift */; };
+		5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E41EB7D029005FC78E /* HomeController.swift */; };
 		5F2846E81EB7D029005FC78E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2846E61EB7D029005FC78E /* Main.storyboard */; };
 		5F2846EB1EB7D029005FC78E /* iHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E91EB7D029005FC78E /* iHome.xcdatamodeld */; };
 		5F2846ED1EB7D029005FC78E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2846EC1EB7D029005FC78E /* Assets.xcassets */; };
@@ -21,7 +21,7 @@
 		5F2847171EB7D593005FC78E /* purpleGradient.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F2847161EB7D593005FC78E /* purpleGradient.jpg */; };
 		5F2847291EB7F786005FC78E /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847281EB7F786005FC78E /* TableCell.swift */; };
 		5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472C1EB7F9D7005FC78E /* MenuViewController.swift */; };
-		5F28472F1EB8E92D005FC78E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472E1EB8E92D005FC78E /* HomeViewController.swift */; };
+		5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */; };
 		D425031A1AD505CFF8128F78 /* Pods_iHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		5B93183428691FD8E5F4FEC7 /* Pods-iHomeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F2846DF1EB7D029005FC78E /* iHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2846E21EB7D029005FC78E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F2846E41EB7D029005FC78E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F2846E41EB7D029005FC78E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5F2846E71EB7D029005FC78E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F2846EA1EB7D029005FC78E /* iHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iHome.xcdatamodel; sourceTree = "<group>"; };
 		5F2846EC1EB7D029005FC78E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		5F2847161EB7D593005FC78E /* purpleGradient.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = purpleGradient.jpg; path = Images/purpleGradient.jpg; sourceTree = SOURCE_ROOT; };
 		5F2847281EB7F786005FC78E /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableCell.swift; path = ../TableCell.swift; sourceTree = "<group>"; };
 		5F28472C1EB7F9D7005FC78E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		5F28472E1EB8E92D005FC78E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightBulbViewController.swift; sourceTree = "<group>"; };
 		72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8950F6D9B89953D8BDF966AF /* Pods-iHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C336D346FFCEAFA8141FE69 /* Pods-iHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHome/Pods-iHome.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,14 +153,14 @@
 				5F2847281EB7F786005FC78E /* TableCell.swift */,
 				5F2846E21EB7D029005FC78E /* AppDelegate.swift */,
 				5F2847131EB7D297005FC78E /* LoginController.swift */,
-				5F2846E41EB7D029005FC78E /* ViewController.swift */,
+				5F2846E41EB7D029005FC78E /* HomeController.swift */,
 				5F2846E61EB7D029005FC78E /* Main.storyboard */,
 				5F2846EC1EB7D029005FC78E /* Assets.xcassets */,
 				5F2846EE1EB7D029005FC78E /* LaunchScreen.storyboard */,
 				5F2846F11EB7D029005FC78E /* Info.plist */,
 				5F2846E91EB7D029005FC78E /* iHome.xcdatamodeld */,
 				5F28472C1EB7F9D7005FC78E /* MenuViewController.swift */,
-				5F28472E1EB8E92D005FC78E /* HomeViewController.swift */,
+				5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */,
 			);
 			path = iHome;
 			sourceTree = "<group>";
@@ -476,9 +476,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2846E51EB7D029005FC78E /* ViewController.swift in Sources */,
+				5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */,
 				5F2847141EB7D297005FC78E /* LoginController.swift in Sources */,
-				5F28472F1EB8E92D005FC78E /* HomeViewController.swift in Sources */,
+				5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */,
 				5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */,
 				5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */,
 				5F2847291EB7F786005FC78E /* TableCell.swift in Sources */,

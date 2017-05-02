@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import SWRevealViewController
 
-class HomeViewController: UIViewController {
-
+class LightBulbViewController: UIViewController {
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuButton.target = revealViewController();
+        menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
 
         // Do any additional setup after loading the view.
     }

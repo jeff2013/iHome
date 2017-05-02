@@ -9,7 +9,7 @@
 import UIKit
 import SWRevealViewController
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
