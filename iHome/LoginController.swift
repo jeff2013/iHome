@@ -12,17 +12,17 @@ import CoreData
 
 class LoginController: UIViewController {
     
-    @IBOutlet weak var UsernameTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
-    @IBOutlet weak var LoginButton: UIButton!
-    @IBOutlet var RegisterButton: UIView!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet var registerButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
-        UsernameTextField.layer.borderColor = UIColor.white.cgColor;
-        PasswordTextField.layer.borderColor = UIColor.white.cgColor;
+        usernameTextField.layer.borderColor = UIColor.white.cgColor;
+        passwordTextField.layer.borderColor = UIColor.white.cgColor;
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -31,9 +31,9 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func Login(_ sender: Any) {
-        let username:String? = UsernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
-        let password:String? = PasswordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
+    @IBAction func login(_ sender: Any) {
+        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
+        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
         
         let users = fetchUsers();
         var foundUser = false;
@@ -53,9 +53,9 @@ class LoginController: UIViewController {
         }
     }
     
-    @IBAction func RegisterNewUser(_ sender: Any) {
-        let username:String? = UsernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
-        let password:String? = PasswordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
+    @IBAction func registerNewUser(_ sender: Any) {
+        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
+        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
         
         let context = getContext();
         

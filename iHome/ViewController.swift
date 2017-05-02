@@ -10,12 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var MenuButton: UIBarButtonItem!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MenuButton.target = revealViewController();
-        MenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        menuButton.target = revealViewControllqer();
+        menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         // Do any additional setup after loading the view, typically from a nib.
     }
 

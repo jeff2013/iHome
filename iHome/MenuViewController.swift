@@ -10,9 +10,9 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    let images = [UIImage(named: "lightbulb"), UIImage(named: "blinds"), UIImage(named: "logout")];
+    let images = [UIImage(named: "lightbulb"), UIImage(named: "blinds"), UIImage(named: "logout")]
     
-    let menuTitles = ["Lights","Blinds","Logout"]
+    let menuTitles = ["Home", "Lights","Blinds","Logout"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +30,18 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return menuTitles.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCellIdentifier") as! TableCell;
-        cell.TitleLabel.text = menuTitles[indexPath.row];
-        cell.Icon.image = images[indexPath.row];
-        return cell;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCellIdentifier") as! TableCell
+        cell.TitleLabel.text = menuTitles[indexPath.row]
+        cell.Icon.image = images[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         //selected
     }
     
