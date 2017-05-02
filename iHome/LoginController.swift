@@ -23,7 +23,11 @@ class LoginController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
         usernameTextField.layer.borderColor = UIColor.white.cgColor;
         passwordTextField.layer.borderColor = UIColor.white.cgColor;
-        // Do any additional setup after loading the view, typically from a nib.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginController.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,4 +130,11 @@ class LoginController: UIViewController {
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }

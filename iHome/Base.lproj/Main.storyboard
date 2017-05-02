@@ -21,16 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iHome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77y-Gt-R5h">
-                                <rect key="frame" x="134" y="50" width="106" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iHome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77y-Gt-R5h">
+                                <rect key="frame" x="158.5" y="50" width="58.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZT-xP-uFv">
-                                <rect key="frame" x="147" y="564" width="81" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZT-xP-uFv">
+                                <rect key="frame" x="158" y="564" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,25 +37,28 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBG-um-R24"/>
                                 </connections>
                             </button>
-                            <textField clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-en-QMX">
-                                <rect key="frame" x="42" y="114" width="291" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-en-QMX">
+                                <rect key="frame" x="26" y="114" width="323" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LFT-fl-5pl"/>
+                                </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbc-0G-kvf">
-                                <rect key="frame" x="42" y="152" width="291" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbc-0G-kvf">
+                                <rect key="frame" x="26" y="152" width="323" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qTp-jD-C3A"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sz-zS-wSz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sz-zS-wSz">
                                 <rect key="frame" x="159" y="613" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -67,6 +68,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92515406850000004" green="0.92515406850000004" blue="0.92515406850000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vKB-en-QMX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="26" id="1ZH-fD-dIB"/>
+                            <constraint firstAttribute="trailing" secondItem="vKB-en-QMX" secondAttribute="trailing" constant="26" id="1ez-F1-pQJ"/>
+                            <constraint firstItem="dbc-0G-kvf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="26" id="39g-m7-CBD"/>
+                            <constraint firstItem="dbc-0G-kvf" firstAttribute="top" secondItem="vKB-en-QMX" secondAttribute="bottom" constant="8" id="E3Z-4Y-Zic"/>
+                            <constraint firstItem="5Sz-zS-wSz" firstAttribute="top" secondItem="RZT-xP-uFv" secondAttribute="bottom" constant="8" id="LQ9-J7-VCC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Sz-zS-wSz" secondAttribute="bottom" constant="24" id="MGR-HF-Ntx"/>
+                            <constraint firstItem="5Sz-zS-wSz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MMe-l4-pc4"/>
+                            <constraint firstItem="vKB-en-QMX" firstAttribute="top" secondItem="77y-Gt-R5h" secondAttribute="bottom" constant="40" id="XxE-Ww-VKH"/>
+                            <constraint firstItem="RZT-xP-uFv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kEM-dT-mk9"/>
+                            <constraint firstItem="77y-Gt-R5h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="mhn-rm-MfR"/>
+                            <constraint firstAttribute="trailing" secondItem="dbc-0G-kvf" secondAttribute="trailing" constant="26" id="oUM-hA-4e9"/>
+                            <constraint firstItem="77y-Gt-R5h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yCr-WK-gfz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="RZT-xP-uFv" id="ZpC-TX-WSR"/>
@@ -140,8 +155,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="Icon" destination="BLv-0M-a6z" id="eUA-HS-GIh"/>
-                                            <outlet property="TitleLabel" destination="A2X-N8-JpH" id="5Rg-7b-6ap"/>
+                                            <outlet property="icon" destination="BLv-0M-a6z" id="TJo-0w-nJo"/>
+                                            <outlet property="titleLabel" destination="A2X-N8-JpH" id="fiM-y5-5ct"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -251,6 +266,6 @@
     <resources>
         <image name="Menu" width="32" height="32"/>
         <image name="blinds" width="50" height="50"/>
-        <image name="switchOff" width="50" height="50"/>
+        <image name="switchOff" width="72" height="72"/>
     </resources>
 </document>

@@ -18,7 +18,6 @@
 		5F2846FB1EB7D029005FC78E /* iHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846FA1EB7D029005FC78E /* iHomeTests.swift */; };
 		5F2847061EB7D029005FC78E /* iHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847051EB7D029005FC78E /* iHomeUITests.swift */; };
 		5F2847141EB7D297005FC78E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847131EB7D297005FC78E /* LoginController.swift */; };
-		5F2847171EB7D593005FC78E /* purpleGradient.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F2847161EB7D593005FC78E /* purpleGradient.jpg */; };
 		5F2847291EB7F786005FC78E /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847281EB7F786005FC78E /* TableCell.swift */; };
 		5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472C1EB7F9D7005FC78E /* MenuViewController.swift */; };
 		5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */; };
@@ -62,7 +61,6 @@
 		5F2847051EB7D029005FC78E /* iHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iHomeUITests.swift; sourceTree = "<group>"; };
 		5F2847071EB7D029005FC78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F2847131EB7D297005FC78E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		5F2847161EB7D593005FC78E /* purpleGradient.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = purpleGradient.jpg; path = Images/purpleGradient.jpg; sourceTree = SOURCE_ROOT; };
 		5F2847281EB7F786005FC78E /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableCell.swift; path = ../TableCell.swift; sourceTree = "<group>"; };
 		5F28472C1EB7F9D7005FC78E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightBulbViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 		5F2846D61EB7D029005FC78E = {
 			isa = PBXGroup;
 			children = (
-				5F2847151EB7D56D005FC78E /* Images */,
 				5F2846E11EB7D029005FC78E /* iHome */,
 				5F2846F91EB7D029005FC78E /* iHomeTests */,
 				5F2847041EB7D029005FC78E /* iHomeUITests */,
@@ -181,15 +178,6 @@
 				5F2847071EB7D029005FC78E /* Info.plist */,
 			);
 			path = iHomeUITests;
-			sourceTree = "<group>";
-		};
-		5F2847151EB7D56D005FC78E /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				5F2847161EB7D593005FC78E /* purpleGradient.jpg */,
-			);
-			name = Images;
-			path = iHome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F2846F01EB7D029005FC78E /* LaunchScreen.storyboard in Resources */,
-				5F2847171EB7D593005FC78E /* purpleGradient.jpg in Resources */,
 				5F2846ED1EB7D029005FC78E /* Assets.xcassets in Resources */,
 				5F2846E81EB7D029005FC78E /* Main.storyboard in Resources */,
 			);

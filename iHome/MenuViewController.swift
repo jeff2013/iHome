@@ -11,9 +11,12 @@ import SWRevealViewController
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    let images = [UIImage(named: "home"), UIImage(named: "lightbulb"), UIImage(named: "blinds"), UIImage(named: "logout")]
-    
-    let menuTitles = ["Home", "Lights","Blinds","Logout"]
+    enum Titles: String{
+        case Home, Lights, Blinds, Logout
+        
+        //Not sure what the best way of providing an iterable way...
+        static let allValues = [Home, Lights, Blinds, Logout]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,24 +34,26 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuTitles.count;
+        return Titles.allValues.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCellIdentifier") as! TableCell
-        cell.TitleLabel.text = menuTitles[indexPath.row]
-        cell.Icon.image = images[indexPath.row]
+        let titleSelected = Titles.allValues[indexPath.row].rawValue
+        
+        cell.titleLabel.text = titleSelected
+        cell.icon.image = UIImage(named: titleSelected.lowercased())
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell: TableCell = tableView.cellForRow(at: indexPath) as! TableCell
-        switch cell.TitleLabel.text!{
-            case menuTitles[0]:
+        switch Titles(rawValue: cell.titleLabel.text!)!{
+            case .Home:
                 switchControllerFor(name: "Main", identifier: "HomeController", animated: true)
                 break
-            case menuTitles[1]:
+            case .Lights:
                 switchControllerFor(name: "Main", identifier: "LightBulbViewController", animated: true)
             break
             default:
