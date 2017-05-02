@@ -10,7 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    let images = [UIImage(named: "lightbulb"), UIImage(named: "blinds"), UIImage(named: "logout")]
+    let images = [UIImage(named: "lightbulb"), UIImage(named: "blinds"), UIImage(named: "logout")];
     
     let menuTitles = ["Lights","Blinds","Logout"]
     
@@ -36,6 +36,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCellIdentifier") as! TableCell;
         cell.TitleLabel.text = menuTitles[indexPath.row];
+        cell.Icon.image = images[indexPath.row];
         return cell;
     }
     
