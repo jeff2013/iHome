@@ -21,8 +21,8 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
-        usernameTextField.layer.borderColor = UIColor.white.cgColor;
-        passwordTextField.layer.borderColor = UIColor.white.cgColor;
+        usernameTextField.layer.borderColor = UIColor.white.cgColor
+        passwordTextField.layer.borderColor = UIColor.white.cgColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginController.dismissKeyboard))
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
@@ -30,22 +30,18 @@ class LoginController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func login(_ sender: Any) {
-        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
-        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
+        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
+        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
         
-        let users = fetchUsers();
-        var foundUser = false;
-        for user in users{
-            let expectedUsername:String = (user as AnyObject).value(forKey: "username") as! String;
-            let expectedPassword:String = (user as AnyObject).value(forKey: "password") as! String;
+        let users = fetchUsers()
+        var foundUser = false
+        
+        users.forEach { user in
+            let expectedUsername:String = (user as AnyObject).value(forKey: NSLocalizedString("Username", comment: "The username placeholder")) as! String
+            let expectedPassword:String = (user as AnyObject).value(forKey: NSLocalizedString("Password", comment: "Password placeholder")) as! String
             if verifyLogin(actualUsername: username, expectedUsername: expectedUsername, actualPassword: password, expectedPassword: expectedPassword){
-                foundUser = true;
+                foundUser = true
             }
         }
         
@@ -53,54 +49,40 @@ class LoginController: UIViewController {
             //trigger next page.
             performSegue(withIdentifier: "loginSegue", sender: nil)
         }else{
-            alertUser(title: "Login Failed", message: "Invalid Username/Password");
+            alertUser(title: NSLocalizedString("Login Failed", comment: "Login failed title"), message: NSLocalizedString("Invalid Username/Password", comment: "Login failed message"))
         }
     }
     
     @IBAction func registerNewUser(_ sender: Any) {
-        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
-        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces);
+        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
+        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
         
-        let context = getContext();
+        let context = getContext()
         
-        if verifyInput(input: username) && verifyInput(input: password){
-            
-            let user = User(context: context);
-            user.username = username;
-            user.password = password;
-            
+        if let username = username, let password = password{
+            let user = User(context: context)
+            user.username = username
+            user.password = password
             do{
-                try context.save();
-                alertUser(title: "Registration Successful", message: "Registration successful!");
+                try context.save()
+                alertUser(title: NSLocalizedString("Registration successful", comment: "Registration successful title"), message: NSLocalizedString("Registration successful!", comment: "Registration successful message"))
             }catch let error as NSError{
-                //Registering new users failed
+                alertUser(title: NSLocalizedString("Registration Failed", comment: "Registration failed title"), message: NSLocalizedString("Please please enter a valid Username and Password", comment: "Please please enter a valid Username and Password"))
+                print(error)
             }
-            
         }else{
-            alertUser(title: "Registration Failed", message: "Please please enter a valid Username and Password");
-            //produce username/password validation message
+            alertUser(title: NSLocalizedString("Registration Failed", comment: "Registration failed title"), message: NSLocalizedString("Please please enter a valid Username and Password", comment: "Please please enter a valid Username and Password"))
         }
-        
     }
     
     //verifies that username and password from user is not nil
     //verifies that username and password match up with that is in the db
     //returns bool; true if login successful, false otherwise
-    func verifyLogin(actualUsername: String?, expectedUsername: String, actualPassword: String?, expectedPassword: String) -> Bool{
-        return verifyInput(input: actualUsername) && verifyInput(input: actualPassword) && (actualUsername == expectedUsername) && (actualPassword == expectedPassword);
-        
+    private func verifyLogin(actualUsername: String?, expectedUsername: String, actualPassword: String?, expectedPassword: String) -> Bool{
+        return actualUsername != nil && actualPassword != nil && (actualUsername == expectedUsername) && (actualPassword == expectedPassword)
     }
     
-    func verifyInput(input:String?)->Bool{
-        if let _ = input{
-            return true
-        }else{
-            return false
-        }
-        
-    }
-    
-    func fetchUsers() -> [Any]{
+    private func fetchUsers() -> [Any]{
         // Initialize Fetch Request
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
         
@@ -112,29 +94,27 @@ class LoginController: UIViewController {
         
         do {
             let result = try getContext().fetch(fetchRequest)
-            return result;
+            return result
         } catch {
             let fetchError = error as NSError
             print(fetchError)
         }
-        return [];
+        return []
     }
     
-    func getContext () -> NSManagedObjectContext {
+    private func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
     
-    func alertUser(title: String, message: String){
+    private func alertUser(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Dismiss"), style: UIAlertActionStyle.destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    
     //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
 }
