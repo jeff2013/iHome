@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuButton.target = revealViewControllqer();
+        menuButton.target = revealViewController();
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         // Do any additional setup after loading the view, typically from a nib.
     }

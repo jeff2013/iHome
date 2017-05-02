@@ -10,7 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    let images = [UIImage(named: "lightbulb"), UIImage(named: "blinds"), UIImage(named: "logout")]
+    let images = [UIImage(named: "home"), UIImage(named: "lightbulb"), UIImage(named: "blinds"), UIImage(named: "logout")]
     
     let menuTitles = ["Home", "Lights","Blinds","Logout"]
     

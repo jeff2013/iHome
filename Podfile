@@ -6,6 +6,7 @@ target 'iHome' do
   use_frameworks!
 
   # Pods for iHome
+  pod 'SWRevealViewController', '~>2.3.0'
 
   target 'iHomeTests' do
     inherit! :search_paths
