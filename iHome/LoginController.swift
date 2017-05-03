@@ -21,8 +21,13 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
+        usernameTextField.layer.borderWidth = 1.0
+        passwordTextField.layer.borderWidth = 1.0
         usernameTextField.layer.borderColor = UIColor.white.cgColor
         passwordTextField.layer.borderColor = UIColor.white.cgColor
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSForegroundColorAttributeName: UIColor.white])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName: UIColor.white])
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginController.dismissKeyboard))
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
@@ -102,14 +107,16 @@ class LoginController: UIViewController {
         return appDelegate.persistentContainer.viewContext
     }
     
-    private func alertUser(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Dismiss"), style: UIAlertActionStyle.destructive, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     //Calls this function when the tap is recognized.
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func alertUser(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Dismiss"), style: UIAlertActionStyle.destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -14,10 +14,13 @@ public enum NetworkRouter: URLRequestConvertible{
     static let baseURLPath = "http://requestb.in/1mswxf71"
     
     case toggleLight(String, LightToggle)
+    case toggleBlinds(String, BlindsToggle)
     
     var method: HTTPMethod{
         switch self {
         case .toggleLight:
+            return .post
+        case .toggleBlinds:
             return .post
         }
     }
@@ -26,6 +29,8 @@ public enum NetworkRouter: URLRequestConvertible{
         switch self {
             case .toggleLight:
                 return "/toggleLight"
+            case .toggleBlinds:
+                return "/toggleBlinds"
         }
     }
     
@@ -34,6 +39,8 @@ public enum NetworkRouter: URLRequestConvertible{
             switch self {
             case let .toggleLight(lightName, toggle):
                 return ["lightName": lightName, "toggle": toggle]
+            case let .toggleBlinds(blindName, toggle):
+                return ["blindName": blindName, "toggle": toggle]
             }
         }()
         
@@ -45,6 +52,10 @@ public enum NetworkRouter: URLRequestConvertible{
         
         return try URLEncoding.default.encode(request, with: parameters)
     }
+}
+
+public enum BlindsToggle: String{
+    case open, close
 }
 
 public enum LightToggle: String {

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "lightOff.png",
+      "filename" : "ic_launcher.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "lightOff-1.png",
+      "filename" : "ic_launcher-1.png",
       "scale" : "2x"
     },
     {
