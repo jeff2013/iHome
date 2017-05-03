@@ -22,6 +22,7 @@
 		5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472C1EB7F9D7005FC78E /* MenuViewController.swift */; };
 		5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */; };
 		5F28473A1EB93874005FC78E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F2847391EB93874005FC78E /* Localizable.strings */; };
+		5F28473F1EBA3E41005FC78E /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28473E1EBA3E41005FC78E /* NetworkRouter.swift */; };
 		D425031A1AD505CFF8128F78 /* Pods_iHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		5F28472C1EB7F9D7005FC78E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightBulbViewController.swift; sourceTree = "<group>"; };
 		5F2847391EB93874005FC78E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5F28473E1EBA3E41005FC78E /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8950F6D9B89953D8BDF966AF /* Pods-iHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C336D346FFCEAFA8141FE69 /* Pods-iHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHome/Pods-iHome.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		5F2846E11EB7D029005FC78E /* iHome */ = {
 			isa = PBXGroup;
 			children = (
+				5F28473D1EBA3B7F005FC78E /* Network */,
 				5F28473C1EB94E31005FC78E /* NavigationTable */,
 				5F28473B1EB94CE3005FC78E /* NavigationViews */,
 				5F2846E21EB7D029005FC78E /* AppDelegate.swift */,
@@ -197,6 +200,14 @@
 				5F2847281EB7F786005FC78E /* TableCell.swift */,
 			);
 			path = NavigationTable;
+			sourceTree = "<group>";
+		};
+		5F28473D1EBA3B7F005FC78E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5F28473E1EBA3E41005FC78E /* NetworkRouter.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +496,7 @@
 			files = (
 				5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */,
 				5F2847141EB7D297005FC78E /* LoginController.swift in Sources */,
+				5F28473F1EBA3E41005FC78E /* NetworkRouter.swift in Sources */,
 				5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */,
 				5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */,
 				5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */,

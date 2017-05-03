@@ -27,8 +27,6 @@ class MenuViewController: UIViewController{
                 return "Default"
             }
         }
-        //Not sure what the best way of providing an iterable way...
-        static let allValues = [home, lights, blinds, logout]
     }
     
     override func viewDidLoad() {

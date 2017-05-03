@@ -16,7 +16,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
 
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet var registerButton: UIView!
+    @IBOutlet weak var registerButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,46 +31,35 @@ class LoginController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
-        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
+        let username = usernameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
         
-        let users = fetchUsers()
-        var foundUser = false
-        
-        users.forEach { user in
-            let expectedUsername:String = (user as AnyObject).value(forKey: NSLocalizedString("Username", comment: "The username placeholder")) as! String
-            let expectedPassword:String = (user as AnyObject).value(forKey: NSLocalizedString("Password", comment: "Password placeholder")) as! String
-            if verifyLogin(actualUsername: username, expectedUsername: expectedUsername, actualPassword: password, expectedPassword: expectedPassword){
-                foundUser = true
-            }
-        }
-        
-        if(foundUser){
+        if fetchUsers(username: username!, password: password!) {
             //trigger next page.
             performSegue(withIdentifier: "loginSegue", sender: nil)
-        }else{
+        } else {
             alertUser(title: NSLocalizedString("Login Failed", comment: "Login failed title"), message: NSLocalizedString("Invalid Username/Password", comment: "Login failed message"))
         }
     }
     
     @IBAction func registerNewUser(_ sender: Any) {
-        let username:String? = usernameTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
-        let password:String? = passwordTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
+        let username = usernameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
         
         let context = getContext()
         
-        if let username = username, let password = password{
+        if let username = username, let password = password {
             let user = User(context: context)
             user.username = username
             user.password = password
-            do{
+            do {
                 try context.save()
                 alertUser(title: NSLocalizedString("Registration successful", comment: "Registration successful title"), message: NSLocalizedString("Registration successful!", comment: "Registration successful message"))
-            }catch let error as NSError{
+            } catch let error as NSError {
                 alertUser(title: NSLocalizedString("Registration Failed", comment: "Registration failed title"), message: NSLocalizedString("Please please enter a valid Username and Password", comment: "Please please enter a valid Username and Password"))
                 print(error)
             }
-        }else{
+        } else {
             alertUser(title: NSLocalizedString("Registration Failed", comment: "Registration failed title"), message: NSLocalizedString("Please please enter a valid Username and Password", comment: "Please please enter a valid Username and Password"))
         }
     }
@@ -78,11 +67,11 @@ class LoginController: UIViewController {
     //verifies that username and password from user is not nil
     //verifies that username and password match up with that is in the db
     //returns bool; true if login successful, false otherwise
-    private func verifyLogin(actualUsername: String?, expectedUsername: String, actualPassword: String?, expectedPassword: String) -> Bool{
+    private func verifyLogin(actualUsername: String?, expectedUsername: String, actualPassword: String?, expectedPassword: String) -> Bool {
         return actualUsername != nil && actualPassword != nil && (actualUsername == expectedUsername) && (actualPassword == expectedPassword)
     }
     
-    private func fetchUsers() -> [Any]{
+    private func fetchUsers(username: String, password: String) -> Bool{
         // Initialize Fetch Request
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
         
@@ -94,12 +83,18 @@ class LoginController: UIViewController {
         
         do {
             let result = try getContext().fetch(fetchRequest)
-            return result
+            var foundUser = false
+            result.forEach { user in
+                if let expectedUsername = (user as AnyObject).value(forKey: "username") as? String, let expectedPassword = (user as AnyObject).value(forKey: "password") as? String {
+                    foundUser = verifyLogin(actualUsername: username, expectedUsername: expectedUsername, actualPassword: password, expectedPassword: expectedPassword)
+                }
+            }
+            return foundUser
         } catch {
             let fetchError = error as NSError
             print(fetchError)
         }
-        return []
+        return false
     }
     
     private func getContext () -> NSManagedObjectContext {
@@ -107,7 +102,7 @@ class LoginController: UIViewController {
         return appDelegate.persistentContainer.viewContext
     }
     
-    private func alertUser(title: String, message: String){
+    private func alertUser(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: "Dismiss"), style: UIAlertActionStyle.destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
