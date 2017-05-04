@@ -39,7 +39,9 @@ class LightBulbViewController: UIViewController {
     //toggles light on and off using the title of the button as a stateholder
     @IBAction func toggleLight(_ sender: UIButton) {
         if let light = Light(rawValue: sender.tag) {
-            LightsService().toggle(lightName: light.stringInterpretation, toggle: LightToggle.off) { (lightname, lightToggle) in
+            //No authentication for Light
+            let auth = AuthModel(userName: nil, pass: nil)
+            LightsService(authenticate: auth).toggle(lightName: light.stringInterpretation, toggle: LightToggle.off, auth: auth) { (lightname, lightToggle) in
                 if let state = sender.titleLabel?.text, lightname != "Error"{
                     switch state {
                     case "on":

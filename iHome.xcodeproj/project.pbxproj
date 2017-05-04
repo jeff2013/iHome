@@ -28,6 +28,8 @@
 		5F2847461EBAA00B005FC78E /* BlindsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847451EBAA00B005FC78E /* BlindsModel.swift */; };
 		5F28474B1EBAA098005FC78E /* LightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28474A1EBAA098005FC78E /* LightsService.swift */; };
 		5F2847521EBAA5F8005FC78E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */; };
+		5F2847541EBB892B005FC78E /* LightsResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847531EBB892B005FC78E /* LightsResultModel.swift */; };
+		5F418ED91EBBA9CD00392EE6 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */; };
 		D425031A1AD505CFF8128F78 /* Pods_iHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		5F2847451EBAA00B005FC78E /* BlindsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsModel.swift; sourceTree = "<group>"; };
 		5F28474A1EBAA098005FC78E /* LightsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsService.swift; sourceTree = "<group>"; };
 		5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		5F2847531EBB892B005FC78E /* LightsResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsResultModel.swift; sourceTree = "<group>"; };
+		5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8950F6D9B89953D8BDF966AF /* Pods-iHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C336D346FFCEAFA8141FE69 /* Pods-iHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHome/Pods-iHome.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 			children = (
 				5F2847431EBA9E9F005FC78E /* LightsModel.swift */,
 				5F2847451EBAA00B005FC78E /* BlindsModel.swift */,
+				5F2847531EBB892B005FC78E /* LightsResultModel.swift */,
+				5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -546,6 +552,8 @@
 				5F2847461EBAA00B005FC78E /* BlindsModel.swift in Sources */,
 				5F2846EB1EB7D029005FC78E /* iHome.xcdatamodeld in Sources */,
 				5F2847411EBA90BE005FC78E /* BlindsViewController.swift in Sources */,
+				5F2847541EBB892B005FC78E /* LightsResultModel.swift in Sources */,
+				5F418ED91EBBA9CD00392EE6 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

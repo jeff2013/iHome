@@ -8,26 +8,30 @@
 
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
 
 class LightsService {
     
-    func toggle(lightName: String, toggle: LightToggle, completion: @escaping(String, LightToggle)->Void){
-        Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle)).responseJSON { response in
+    //default authentication to be false
+    var authModel: AuthModel
+    
+    init(authenticate: AuthModel) {
+        authModel = authenticate
+    }
+    
+    func toggle(lightName: String, toggle: LightToggle, auth: AuthModel, completion: @escaping(String, LightToggle)->Void){
+        Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle, authentication: auth)).responseObject { (response: DataResponse<LightsResultModel>) in
             guard response.result.isSuccess else{
                 //an error has happened
                 completion("Error", LightToggle.off)
                 return
             }
-            guard let responseJSON = response.result.value as? [String: Any],
-                let results = responseJSON["results"] as? [String: Any],
-                let lightName = results["lightName"] as? String,
-                let toggleString = results["toggle"] as? String,
-                let toggle = LightToggle(rawValue: toggleString) else {
-                    //invalid data returned
-                    completion("Error", LightToggle.off)
-                    return
+            guard let lightName = response.value?.lightName, let toggle = response.value?.toggle else{
+                completion("Error", LightToggle.off)
+                return
             }
-            completion(lightName, toggle)
+            //this is bad, fix it
+            completion(lightName, LightToggle(rawValue: toggle)!)
         }
     }
 }

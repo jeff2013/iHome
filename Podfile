@@ -8,6 +8,8 @@ target 'iHome' do
   # Pods for iHome
   pod 'SWRevealViewController', '~>2.3.0'
   pod 'Alamofire', '~> 4.4'
+  pod 'ObjectMapper', '~> 2.2'
+  pod 'AlamofireObjectMapper', '~>4.0'
 
   target 'iHomeTests' do
     inherit! :search_paths
