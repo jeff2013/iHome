@@ -13,14 +13,12 @@ public enum NetworkRouter: URLRequestConvertible{
 
     static let baseURLPath = "http://requestb.in/1mswxf71"
     
-    case toggleLight(String, LightToggle)
-    case toggleBlinds(String, BlindsToggle)
+    case toggleLight(lightName: String, lightToggle: LightToggle)
+    case toggleBlinds(blindName: String, blindToggle: BlindsToggle)
     
     var method: HTTPMethod{
         switch self {
-        case .toggleLight:
-            return .post
-        case .toggleBlinds:
+        case .toggleLight, .toggleBlinds:
             return .post
         }
     }
@@ -53,13 +51,3 @@ public enum NetworkRouter: URLRequestConvertible{
         return try URLEncoding.default.encode(request, with: parameters)
     }
 }
-
-public enum BlindsToggle: String{
-    case open, close
-}
-
-public enum LightToggle: String {
-    case on, off
-}
-
-

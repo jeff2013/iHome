@@ -13,7 +13,7 @@ class MenuViewController: UIViewController{
     enum Title: Int{
         case home, lights, blinds, logout, count
         
-        func description()->String{
+        var description: String{
             switch self{
             case .home:
                 return "Home"
@@ -57,7 +57,7 @@ extension MenuViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCellIdentifier") as! TableCell
-        let titleSelected = Title(rawValue: indexPath.row)!.description()
+        let titleSelected = Title(rawValue: indexPath.row)!.description
         
         cell.titleLabel.text = titleSelected
         cell.icon.image = UIImage(named: titleSelected.lowercased())

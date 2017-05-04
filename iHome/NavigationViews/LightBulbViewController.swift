@@ -8,14 +8,13 @@
 
 import UIKit
 import SWRevealViewController
-import Alamofire
 
 class LightBulbViewController: UIViewController {
     
     enum Light: Int{
         case mainLamp, deskLamp, moodLight
         
-        func stringInterpretation()->String {
+        var stringInterpretation: String {
             switch self{
             case .mainLamp:
                 return "mainLamp"
@@ -32,6 +31,7 @@ class LightBulbViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "greyGradient.jpg")!)
         menuButton.target = revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
     }
@@ -39,7 +39,7 @@ class LightBulbViewController: UIViewController {
     //toggles light on and off using the title of the button as a stateholder
     @IBAction func toggleLight(_ sender: UIButton) {
         if let light = Light(rawValue: sender.tag) {
-            toggle(lightName: light.stringInterpretation(), toggle: LightToggle.off) { (lightname, lightToggle) in
+            LightsService().toggle(lightName: light.stringInterpretation, toggle: LightToggle.off) { (lightname, lightToggle) in
                 if let state = sender.titleLabel?.text, lightname != "Error"{
                     switch state {
                     case "on":
@@ -57,29 +57,6 @@ class LightBulbViewController: UIViewController {
                     self.alertUser(title: NSLocalizedString("Error", comment: "Error title"), message: NSLocalizedString("An error has occurred", comment: "The error message"))
                 }
             }
-        }
-    }
-}
-
-// MARK: - Networking calls
-extension LightBulbViewController {
-    func toggle(lightName: String, toggle: LightToggle, completion: @escaping(String, LightToggle)->Void){
-        Alamofire.request(NetworkRouter.toggleLight(lightName, toggle)).responseJSON { response in
-            guard response.result.isSuccess else{
-                //an error has happened
-                completion("Error", LightToggle.off)
-                return
-            }
-            guard let responseJSON = response.result.value as? [String: Any],
-            let results = responseJSON["results"] as? [String: Any],
-            let lightName = results["lightName"] as? String,
-            let toggleString = results["toggle"] as? String,
-            let toggle = LightToggle(rawValue: toggleString) else {
-                //invalid data returned
-                completion("Error", LightToggle.off)
-                return
-            }
-            completion(lightName, toggle)
         }
     }
 }

@@ -23,6 +23,11 @@
 		5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */; };
 		5F28473A1EB93874005FC78E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F2847391EB93874005FC78E /* Localizable.strings */; };
 		5F28473F1EBA3E41005FC78E /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28473E1EBA3E41005FC78E /* NetworkRouter.swift */; };
+		5F2847411EBA90BE005FC78E /* BlindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847401EBA90BE005FC78E /* BlindsViewController.swift */; };
+		5F2847441EBA9E9F005FC78E /* LightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847431EBA9E9F005FC78E /* LightsModel.swift */; };
+		5F2847461EBAA00B005FC78E /* BlindsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847451EBAA00B005FC78E /* BlindsModel.swift */; };
+		5F28474B1EBAA098005FC78E /* LightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28474A1EBAA098005FC78E /* LightsService.swift */; };
+		5F2847521EBAA5F8005FC78E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */; };
 		D425031A1AD505CFF8128F78 /* Pods_iHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +73,11 @@
 		5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightBulbViewController.swift; sourceTree = "<group>"; };
 		5F2847391EB93874005FC78E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5F28473E1EBA3E41005FC78E /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		5F2847401EBA90BE005FC78E /* BlindsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsViewController.swift; sourceTree = "<group>"; };
+		5F2847431EBA9E9F005FC78E /* LightsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsModel.swift; sourceTree = "<group>"; };
+		5F2847451EBAA00B005FC78E /* BlindsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsModel.swift; sourceTree = "<group>"; };
+		5F28474A1EBAA098005FC78E /* LightsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsService.swift; sourceTree = "<group>"; };
+		5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8950F6D9B89953D8BDF966AF /* Pods-iHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C336D346FFCEAFA8141FE69 /* Pods-iHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHome/Pods-iHome.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +161,9 @@
 		5F2846E11EB7D029005FC78E /* iHome */ = {
 			isa = PBXGroup;
 			children = (
+				5F28474E1EBAA586005FC78E /* Extensions */,
+				5F2847491EBAA083005FC78E /* Services */,
+				5F2847421EBA9D98005FC78E /* Models */,
 				5F28473D1EBA3B7F005FC78E /* Network */,
 				5F28473C1EB94E31005FC78E /* NavigationTable */,
 				5F28473B1EB94CE3005FC78E /* NavigationViews */,
@@ -189,6 +202,7 @@
 			children = (
 				5F28472E1EB8E92D005FC78E /* LightBulbViewController.swift */,
 				5F2846E41EB7D029005FC78E /* HomeController.swift */,
+				5F2847401EBA90BE005FC78E /* BlindsViewController.swift */,
 			);
 			path = NavigationViews;
 			sourceTree = "<group>";
@@ -208,6 +222,31 @@
 				5F28473E1EBA3E41005FC78E /* NetworkRouter.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5F2847421EBA9D98005FC78E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F2847431EBA9E9F005FC78E /* LightsModel.swift */,
+				5F2847451EBAA00B005FC78E /* BlindsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F2847491EBAA083005FC78E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5F28474A1EBAA098005FC78E /* LightsService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		5F28474E1EBAA586005FC78E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,14 +533,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2847441EBA9E9F005FC78E /* LightsModel.swift in Sources */,
 				5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */,
+				5F28474B1EBAA098005FC78E /* LightsService.swift in Sources */,
 				5F2847141EB7D297005FC78E /* LoginController.swift in Sources */,
 				5F28473F1EBA3E41005FC78E /* NetworkRouter.swift in Sources */,
 				5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */,
 				5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */,
 				5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */,
 				5F2847291EB7F786005FC78E /* TableCell.swift in Sources */,
+				5F2847521EBAA5F8005FC78E /* UIViewControllerExtension.swift in Sources */,
+				5F2847461EBAA00B005FC78E /* BlindsModel.swift in Sources */,
 				5F2846EB1EB7D029005FC78E /* iHome.xcdatamodeld in Sources */,
+				5F2847411EBA90BE005FC78E /* BlindsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
