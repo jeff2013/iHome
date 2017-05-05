@@ -13,7 +13,7 @@ class LightBulbViewController: UIViewController {
     
     enum Light: Int{
         case mainLamp, deskLamp, moodLight
-        
+    
         var stringInterpretation: String {
             switch self{
             case .mainLamp:
@@ -41,8 +41,15 @@ class LightBulbViewController: UIViewController {
         if let light = Light(rawValue: sender.tag) {
             //No authentication for Light
             let auth = AuthModel(userName: nil, pass: nil)
-            LightsService(authenticate: auth).toggle(lightName: light.stringInterpretation, toggle: LightToggle.off, auth: auth) { (lightname, lightToggle) in
-                if let state = sender.titleLabel?.text, lightname != "Error"{
+            LightsService(authenticate: auth).toggle(lightName: light.stringInterpretation, toggle: LightToggle.off, auth: auth) { (result) in
+                guard result.isSuccess else{
+                    //Not sure what to do with the error message
+                    print(result.error.debugDescription)
+                    self.alertUser(title: NSLocalizedString("Error", comment: "Error title"), message: NSLocalizedString("An error has occurred", comment: "The error message"))
+                    return
+                }
+                
+                if let state = sender.titleLabel?.text{
                     switch state {
                     case "on":
                         sender.setTitle("off", for: .normal)

@@ -22,12 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iHome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77y-Gt-R5h">
-                                <rect key="frame" x="158" y="50" width="59" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZT-xP-uFv">
                                 <rect key="frame" x="158" y="564" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -39,7 +33,7 @@
                                 </connections>
                             </button>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKB-en-QMX">
-                                <rect key="frame" x="26" y="114" width="323" height="30"/>
+                                <rect key="frame" x="26" y="173" width="323" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LFT-fl-5pl"/>
@@ -49,7 +43,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbc-0G-kvf">
-                                <rect key="frame" x="26" y="152" width="323" height="30"/>
+                                <rect key="frame" x="26" y="211" width="323" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qTp-jD-C3A"/>
@@ -67,6 +61,12 @@
                                     <action selector="registerNewUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpb-mS-QO9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iHome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77y-Gt-R5h">
+                                <rect key="frame" x="158" y="64" width="59" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92515406850000004" green="0.92515406850000004" blue="0.92515406850000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -77,9 +77,9 @@
                             <constraint firstItem="5Sz-zS-wSz" firstAttribute="top" secondItem="RZT-xP-uFv" secondAttribute="bottom" constant="8" id="LQ9-J7-VCC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Sz-zS-wSz" secondAttribute="bottom" constant="24" id="MGR-HF-Ntx"/>
                             <constraint firstItem="5Sz-zS-wSz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MMe-l4-pc4"/>
-                            <constraint firstItem="vKB-en-QMX" firstAttribute="top" secondItem="77y-Gt-R5h" secondAttribute="bottom" constant="40" id="XxE-Ww-VKH"/>
+                            <constraint firstItem="vKB-en-QMX" firstAttribute="top" secondItem="77y-Gt-R5h" secondAttribute="bottom" constant="85" id="XxE-Ww-VKH"/>
                             <constraint firstItem="RZT-xP-uFv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kEM-dT-mk9"/>
-                            <constraint firstItem="77y-Gt-R5h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="mhn-rm-MfR"/>
+                            <constraint firstItem="77y-Gt-R5h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="mhn-rm-MfR"/>
                             <constraint firstAttribute="trailing" secondItem="dbc-0G-kvf" secondAttribute="trailing" constant="26" id="oUM-hA-4e9"/>
                             <constraint firstItem="77y-Gt-R5h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yCr-WK-gfz"/>
                         </constraints>
@@ -169,10 +169,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" id="U3x-0Q-xGB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laW-eS-o5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562.4000000000001" y="-298.2008995502249"/>
+            <point key="canvasLocation" x="1694" y="-279"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="3dV-Ee-ASV">
@@ -193,6 +196,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HbC-Oe-6oy">
+                                <rect key="frame" x="112" y="271" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -344,7 +351,7 @@
                                     <constraint firstAttribute="width" constant="53" id="V3U-B7-Rc2"/>
                                     <constraint firstAttribute="height" constant="53" id="zDj-h0-Ije"/>
                                 </constraints>
-                                <state key="normal" title="off" image="switchOff"/>
+                                <state key="normal" title="off" image="blindClose"/>
                                 <connections>
                                     <action selector="toggleLight:" destination="wxb-ut-CCq" eventType="touchUpInside" id="oek-mv-Lm0"/>
                                 </connections>
@@ -355,13 +362,13 @@
                                     <constraint firstAttribute="width" constant="53" id="JFZ-T4-2Ra"/>
                                     <constraint firstAttribute="height" constant="53" id="YYp-ug-AlY"/>
                                 </constraints>
-                                <state key="normal" title="off" image="switchOff"/>
+                                <state key="normal" title="off" image="blindClose"/>
                                 <connections>
                                     <action selector="toggleLight:" destination="wxb-ut-CCq" eventType="touchUpInside" id="1Hl-DV-5Fu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood Lights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itc-Tb-Q6A">
-                                <rect key="frame" x="263" y="308" width="96" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itc-Tb-Q6A">
+                                <rect key="frame" x="286" y="308" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -372,25 +379,25 @@
                                     <constraint firstAttribute="height" constant="53" id="Ihd-61-xcj"/>
                                     <constraint firstAttribute="width" constant="53" id="hKa-qU-hwL"/>
                                 </constraints>
-                                <state key="normal" title="off" image="switchOff"/>
+                                <state key="normal" title="off" image="blindClose"/>
                                 <connections>
                                     <action selector="toggleLight:" destination="wxb-ut-CCq" eventType="touchUpInside" id="r6t-1G-P9p"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Lamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-se-ZA2">
-                                <rect key="frame" x="16" y="308" width="84" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Livingroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-vI-jah">
+                                <rect key="frame" x="145" y="308" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desk Lamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-vI-jah">
-                                <rect key="frame" x="144" y="308" width="86" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blinds Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqE-L7-jJA">
+                                <rect key="frame" x="133" y="210" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lights control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqE-L7-jJA">
-                                <rect key="frame" x="135" y="210" width="105" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bedroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-se-ZA2">
+                                <rect key="frame" x="23" y="308" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -399,14 +406,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Whs-ug-yBw" firstAttribute="centerX" secondItem="StC-ly-jt2" secondAttribute="centerX" id="0WI-FS-q8f"/>
-                            <constraint firstItem="7Og-se-ZA2" firstAttribute="leading" secondItem="StC-ly-jt2" secondAttribute="leading" constant="16" id="4k4-X1-cJy"/>
                             <constraint firstItem="iau-tc-9jZ" firstAttribute="top" secondItem="LYE-2u-MWo" secondAttribute="bottom" constant="39" id="5d1-Y0-BbY"/>
                             <constraint firstItem="8Tg-Bz-5Le" firstAttribute="top" secondItem="LYE-2u-MWo" secondAttribute="bottom" constant="226" id="5ya-xD-Shb"/>
                             <constraint firstAttribute="trailing" secondItem="qtu-P0-0q8" secondAttribute="trailing" constant="43" id="7uz-fQ-fnA"/>
+                            <constraint firstItem="7Og-se-ZA2" firstAttribute="leading" secondItem="StC-ly-jt2" secondAttribute="leading" constant="23" id="BsA-Uc-Uy4"/>
                             <constraint firstItem="7Og-se-ZA2" firstAttribute="top" secondItem="8Tg-Bz-5Le" secondAttribute="bottom" constant="9" id="ETf-IF-FVn"/>
                             <constraint firstItem="Itc-Tb-Q6A" firstAttribute="top" secondItem="qtu-P0-0q8" secondAttribute="bottom" constant="8" id="Guv-aN-9vD"/>
                             <constraint firstItem="wJg-vI-jah" firstAttribute="centerX" secondItem="StC-ly-jt2" secondAttribute="centerX" id="HLu-l4-tjb"/>
                             <constraint firstItem="KqE-L7-jJA" firstAttribute="centerX" secondItem="StC-ly-jt2" secondAttribute="centerX" id="HgB-qU-m0L"/>
+                            <constraint firstAttribute="trailing" secondItem="Itc-Tb-Q6A" secondAttribute="trailing" constant="50" id="NpH-CN-tgQ"/>
                             <constraint firstItem="wJg-vI-jah" firstAttribute="top" secondItem="Whs-ug-yBw" secondAttribute="bottom" constant="8" id="Nwz-em-caK"/>
                             <constraint firstItem="8Tg-Bz-5Le" firstAttribute="leading" secondItem="StC-ly-jt2" secondAttribute="leading" constant="32" id="RAS-6I-bjM"/>
                             <constraint firstItem="iau-tc-9jZ" firstAttribute="centerX" secondItem="StC-ly-jt2" secondAttribute="centerX" id="TIY-S9-wkm"/>
@@ -418,7 +426,6 @@
                             <constraint firstItem="wJg-vI-jah" firstAttribute="top" secondItem="Whs-ug-yBw" secondAttribute="bottom" constant="8" id="kpT-iv-zqE"/>
                             <constraint firstItem="Whs-ug-yBw" firstAttribute="top" secondItem="iau-tc-9jZ" secondAttribute="bottom" constant="45" id="m5t-TB-FCG"/>
                             <constraint firstItem="7Og-se-ZA2" firstAttribute="top" secondItem="8Tg-Bz-5Le" secondAttribute="bottom" constant="9" id="sw3-uQ-61C"/>
-                            <constraint firstAttribute="trailing" secondItem="Itc-Tb-Q6A" secondAttribute="trailing" constant="16" id="xj7-0q-bZG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r8A-u8-qkb">
@@ -430,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8b-NI-822" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3269" y="1087"/>
+            <point key="canvasLocation" x="3271" y="1121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zu7-jl-xW8">
@@ -454,6 +461,7 @@
     <resources>
         <image name="Menu" width="32" height="32"/>
         <image name="blindAutomation" width="512" height="512"/>
+        <image name="blindClose" width="96" height="96"/>
         <image name="blinds" width="50" height="50"/>
         <image name="lightAutomation" width="512" height="512"/>
         <image name="switchOff" width="72" height="72"/>

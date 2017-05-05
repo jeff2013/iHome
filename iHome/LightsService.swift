@@ -19,19 +19,9 @@ class LightsService {
         authModel = authenticate
     }
     
-    func toggle(lightName: String, toggle: LightToggle, auth: AuthModel, completion: @escaping(String, LightToggle)->Void){
-        Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle, authentication: auth)).responseObject { (response: DataResponse<LightsResultModel>) in
-            guard response.result.isSuccess else{
-                //an error has happened
-                completion("Error", LightToggle.off)
-                return
-            }
-            guard let lightName = response.value?.lightName, let toggle = response.value?.toggle else{
-                completion("Error", LightToggle.off)
-                return
-            }
-            //this is bad, fix it
-            completion(lightName, LightToggle(rawValue: toggle)!)
-        }
+    func toggle(lightName: String, toggle: LightToggle, auth: AuthModel, completion: @escaping(Result<LightsResultModel>)->Void){
+        Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle, authentication: auth)).validate(statusCode: 200..<300).responseObject { (response: DataResponse<LightsResultModel>) in
+            completion(response.result)
+        } 
     }
 }

@@ -75,6 +75,10 @@ extension MenuViewController:UITableViewDelegate{
         case Title.lights.rawValue:
             switchControllerFor(name: "Main", identifier: "LightBulbViewController", animated: true)
             break
+        case Title.blinds.rawValue:
+            switchControllerFor(name: "Main", identifier: "BlindsViewController", animated: true)
+        case Title.logout.rawValue:
+            performSegue(withIdentifier: "logoutSegue", sender: nil)
         default:
             break
         }
