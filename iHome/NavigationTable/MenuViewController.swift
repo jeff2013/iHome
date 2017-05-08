@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import KeychainSwift
 
 class MenuViewController: UIViewController{
     enum Title: Int{
@@ -33,16 +34,6 @@ class MenuViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 //MARK: - MenuUITableViewDataSource
@@ -78,7 +69,12 @@ extension MenuViewController:UITableViewDelegate{
         case Title.blinds.rawValue:
             switchControllerFor(name: "Main", identifier: "BlindsViewController", animated: true)
         case Title.logout.rawValue:
-            performSegue(withIdentifier: "logoutSegue", sender: nil)
+            replaceRootController(storyBoardIdentifier: "LoginViewController", duration: 0.3, transition: .transitionFlipFromRight, completion: {})
+            
+            //wipes the keychain and the authentication token
+            let keychain = KeychainSwift()
+            keychain.delete("authenticationToken")
+            keychain.clear()
         default:
             break
         }

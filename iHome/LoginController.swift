@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import KeychainSwift
 
 class LoginController: UIViewController {
     
@@ -17,17 +18,12 @@ class LoginController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIView!
+    let keychainService = KeychainService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
-        usernameTextField.layer.borderWidth = 1.0
-        passwordTextField.layer.borderWidth = 1.0
-        usernameTextField.layer.borderColor = UIColor.white.cgColor
-        passwordTextField.layer.borderColor = UIColor.white.cgColor
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSForegroundColorAttributeName: UIColor.white])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName: UIColor.white])
-        
+        setupTextViews(textFields: [usernameTextField, passwordTextField])
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginController.dismissKeyboard))
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
@@ -35,37 +31,20 @@ class LoginController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     @IBAction func login(_ sender: Any) {
         let username = usernameTextField.text?.trimmingCharacters(in: .whitespaces)
         let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
         
         if fetchUsers(username: username!, password: password!) {
+            keychainService.storeToken(token: "tempToken")
             //trigger next page.
-            performSegue(withIdentifier: "loginSegue", sender: nil)
+            replaceRootController(storyBoardIdentifier: "SWRevealViewController", duration: 0.3, transition: .transitionFlipFromLeft, completion: {})
         } else {
-            alertUser(title: NSLocalizedString("Login Failed", comment: "Login failed title"), message: NSLocalizedString("Invalid Username/Password", comment: "Login failed message"))
-        }
-    }
-    
-    @IBAction func registerNewUser(_ sender: Any) {
-        let username = usernameTextField.text?.trimmingCharacters(in: .whitespaces)
-        let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
-        
-        let context = getContext()
-        
-        if let username = username, let password = password {
-            let user = User(context: context)
-            user.username = username
-            user.password = password
-            do {
-                try context.save()
-                alertUser(title: NSLocalizedString("Registration successful", comment: "Registration successful title"), message: NSLocalizedString("Registration successful!", comment: "Registration successful message"))
-            } catch let error as NSError {
-                alertUser(title: NSLocalizedString("Registration Failed", comment: "Registration failed title"), message: NSLocalizedString("Please please enter a valid Username and Password", comment: "Please please enter a valid Username and Password"))
-                print(error)
-            }
-        } else {
-            alertUser(title: NSLocalizedString("Registration Failed", comment: "Registration failed title"), message: NSLocalizedString("Please please enter a valid Username and Password", comment: "Please please enter a valid Username and Password"))
+            alertUser(title: "Login Failed".localized, message: "Invalid Username/Password".localized)
         }
     }
     
@@ -101,14 +80,33 @@ class LoginController: UIViewController {
         }
         return false
     }
-    
-    private func getContext () -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }
-    
+
     //Calls this function when the tap is recognized.
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        print("login disappeared")
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
+    
+    @IBAction func registerUser(_ sender: Any) {
+        replaceRootController(storyBoardIdentifier: "RegisterViewController", duration: 0.3, transition: .transitionCrossDissolve, completion: {})
+    }
+}
+
+//MARK: - LoginTextFieldDelegate
+extension LoginController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0{
+            self.passwordTextField.becomeFirstResponder()
+            return true
+        }else{
+            self.view.endEditing(true)
+            return false
+        }
     }
 }

@@ -8,12 +8,15 @@
 
 "Username" = "Username";
 "Password" = "Password";
+"First Name" = "First Name";
+"Last Name" = "Last Name";
 "Login Failed" = "Login Failed";
 "Invalid Username/Password" = "Invalid Username/Password";
 "Registration successful" = "Registration successful";
 "Registration successful!" = "Registration successful!";
 "Registration Failed" = "Registration Failed";
-"Please please enter a valid Username and Password" = "Please please enter a valid Username and Password";
+"Please enter a valid Username and Password" = "Please enter a valid Username and Password";
 "Dismiss" = "Dismiss";
 "Error" = "Error";
 "An error has occurred" = "An error has occurred";
+"Ok" = "Ok";

@@ -12,7 +12,6 @@ public struct AuthModel{
     var authenticate: Bool
     let username: String?
     let password: String?
-    let authenticationToken = "placeholder"
     
     //Not sure if this is the best way to do it but it's clean..
     //If authenticate, pass in a valid username/password
@@ -20,5 +19,17 @@ public struct AuthModel{
         authenticate = (userName != nil && pass != nil) ? true : false
         username = userName
         password = pass
+    }
+}
+
+public class Auth {
+    static let sharedInstance: Auth = {
+        let instance = Auth()
+        return instance
+    }()
+    
+    var authModel:AuthModel = AuthModel(userName: nil, pass: nil)
+    
+    init(){
     }
 }

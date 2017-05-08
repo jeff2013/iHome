@@ -13,13 +13,13 @@ import AlamofireObjectMapper
 class LightsService {
     
     //default authentication to be false
-    var authModel: AuthModel
+    var shouldAuthenticate: Bool
     
-    init(authenticate: AuthModel) {
-        authModel = authenticate
+    init(authenticate: Bool) {
+        shouldAuthenticate = authenticate
     }
     
-    func toggle(lightName: String, toggle: LightToggle, auth: AuthModel, completion: @escaping(Result<LightsResultModel>)->Void){
+    func toggle(lightName: String, toggle: LightToggle, auth: Bool, completion: @escaping(Result<LightsResultModel>)->Void){
         Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle, authentication: auth)).validate(statusCode: 200..<300).responseObject { (response: DataResponse<LightsResultModel>) in
             completion(response.result)
         } 

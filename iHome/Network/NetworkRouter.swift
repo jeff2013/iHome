@@ -13,8 +13,8 @@ public enum NetworkRouter: URLRequestConvertible{
 
     static let baseURLPath = "http://requestb.in/1mswxf71"
     
-    case toggleLight(lightName: String, lightToggle: LightToggle, authentication: AuthModel)
-    case toggleBlinds(blindName: String, blindToggle: BlindsToggle, authentication: AuthModel)
+    case toggleLight(lightName: String, lightToggle: LightToggle, authentication: Bool)
+    case toggleBlinds(blindName: String, blindToggle: BlindsToggle, authentication: Bool)
     
     var method: HTTPMethod{
         switch self {
@@ -33,14 +33,14 @@ public enum NetworkRouter: URLRequestConvertible{
     }
     
     public func asURLRequest() throws -> URLRequest {
-        var authModel:AuthModel?
+        var shouldAuthenticate: Bool?
         let parameters: [String: Any] = {
             switch self {
             case let .toggleLight(lightName, toggle, auth):
-                authModel = auth
+                shouldAuthenticate = auth
                 return ["lightName": lightName, "toggle": toggle]
             case let .toggleBlinds(blindName, toggle, auth):
-                authModel = auth
+                shouldAuthenticate = auth
                 return ["blindName": blindName, "toggle": toggle]
             }
         }()
@@ -50,7 +50,9 @@ public enum NetworkRouter: URLRequestConvertible{
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(10*1000)
-        if (authModel?.authenticate)!, let token = authModel?.authenticationToken{
+        
+        let keychainService = KeychainService()
+        if shouldAuthenticate!, let token = keychainService.getToken(){
             request.setValue(token, forHTTPHeaderField: "Authorization")
         }
         return try URLEncoding.default.encode(request, with: parameters)
