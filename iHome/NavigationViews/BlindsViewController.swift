@@ -41,7 +41,7 @@ class BlindsViewController: UIViewController {
         toggleButton(sender: sender)
         if let blind = Blind(rawValue: sender.tag) {
             //No authentication for Blinds
-            BlindsService(authenticate: false).toggle(blindName: blind.stringInterpretation, toggle: BlindsToggle.close, auth: false) { (result) in
+            BlindsService.toggle(blindName: blind.stringInterpretation, toggle: BlindsToggle.close) { (result) in
                 guard result.isSuccess else{
                     //Not sure what to do with the error message
                     print(result.error.debugDescription)
@@ -54,8 +54,8 @@ class BlindsViewController: UIViewController {
         }
     }
     
-    private func toggleButton(sender: UIButton){
-        if let state = sender.titleLabel?.text{
+    private func toggleButton(sender: UIButton) {
+        if let state = sender.titleLabel?.text {
             switch state {
             case "on":
                 sender.setTitle("off", for: .normal)

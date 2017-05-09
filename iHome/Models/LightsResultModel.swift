@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class LightsResultModel: Mappable{
+class LightsResultModel: Mappable {
     var lightName: String?
     var toggle: String?
     

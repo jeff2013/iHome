@@ -9,19 +9,13 @@
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
+import ObjectMapper
 
 class LightsService {
     
-    //default authentication to be false
-    var shouldAuthenticate: Bool
-    
-    init(authenticate: Bool) {
-        shouldAuthenticate = authenticate
-    }
-    
-    func toggle(lightName: String, toggle: LightToggle, auth: Bool, completion: @escaping(Result<LightsResultModel>)->Void){
-        Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle)).validate(statusCode: 200..<300).responseObject { (response: DataResponse<LightsResultModel>) in
-            completion(response.result)
-        } 
+    class func toggle(lightName: String, toggle: LightToggle, auth: Bool, completion: @escaping(Result<LightsResultModel>) -> Void) {
+        APIClient.default.request(router: NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle), completion: { (result: Result<LightsResultModel>) in
+            completion(result)
+        })
     }
 }

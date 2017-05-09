@@ -11,7 +11,7 @@ import Foundation
 enum NotificationModel: String {
     case DefaultNotification, LightsNotification, BlindsNotification
     
-    func getNotification()->NSNotification.Name{
+    func getNotification() -> NSNotification.Name {
         return Notification.Name(rawValue: self.rawValue)
     }
 }

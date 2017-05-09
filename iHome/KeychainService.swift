@@ -9,23 +9,23 @@
 import Foundation
 import KeychainSwift
 
-class KeychainService{
+class KeychainService {
     static let keychain = KeychainSwift()
     static let tokenKey = "authenticationToken"
     
-    class func storeToken(token: String){
+    class func storeToken(token: String) {
         KeychainService.keychain.set(token, forKey: KeychainService.tokenKey)
     }
     
-    class func getToken()->String?{
+    class func getToken() -> String? {
         return KeychainService.keychain.get(KeychainService.tokenKey)
     }
     
-    class func deleteToken(){
+    class func deleteToken() {
         KeychainService.keychain.delete(KeychainService.tokenKey)
     }
     
-    class func clearKeychain(){
+    class func clearKeychain() {
         KeychainService.keychain.clear()
     }
     

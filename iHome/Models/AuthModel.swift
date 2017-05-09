@@ -13,7 +13,7 @@ public struct AuthModel {
     let password: String?
     
     //Not sure if this is the best way to do it but it's clean..
-    init(userName:String?, pass: String?){
+    init(userName:String?, pass: String?) {
         username = userName
         password = pass
     }

@@ -35,7 +35,7 @@ public enum NetworkRouter: URLRequestConvertible {
     }
     
     var shouldAuthenticate: Bool {
-        switch self{
+        switch self {
             case .toggleLight, .toggleBlinds:
                 return true
         }

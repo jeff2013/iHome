@@ -11,8 +11,10 @@ import SWRevealViewController
 
 class LightBulbViewController: UIViewController {
     
-    enum Light: Int{
-        case mainLamp, deskLamp, moodLight
+    enum Light: Int {
+        case mainLamp
+        case deskLamp
+        case moodLight
     
         var stringInterpretation: String {
             switch self{
@@ -37,14 +39,17 @@ class LightBulbViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "greyGradient.jpg")!)
-        pageTitleLabel.font = UIFont(name: "emulogic", size: 17)
-        mainLampLabel.font = UIFont(name: "emulogic", size: 10)
-        deskLampLabel.font = UIFont(name: "emulogic", size: 10)
-        moodLightLabel.font = UIFont(name: "emulogic", size: 10)
-        
+        pageTitleLabel.font = TextStyleModel.FontStyle.pageTitle.getFont()
+        setButtonLabels(labels: [mainLampLabel, deskLampLabel, moodLightLabel])
         
         menuButton.target = revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+    }
+    
+    func setButtonLabels(labels: [UILabel]) {
+        for label in labels {
+            label.font = TextStyleModel.FontStyle.buttonLabels.getFont()
+        }
     }
     
     //toggles light on and off using the title of the button as a stateholder
@@ -53,8 +58,7 @@ class LightBulbViewController: UIViewController {
         toggleButton(sender: sender)
         NotificationService().createNotification(notification: NotificationModel.LightsNotification)
         if let light = Light(rawValue: sender.tag) {
-            //No authentication for Light
-            LightsService(authenticate: false).toggle(lightName: light.stringInterpretation, toggle: LightToggle.off, auth: false) { (result) in
+            LightsService.toggle(lightName: light.stringInterpretation, toggle: LightToggle.off, auth: false) { (result) in
                 guard result.isSuccess else{
                     //Not sure what to do with the error message
                     print(result.error.debugDescription)
@@ -66,8 +70,8 @@ class LightBulbViewController: UIViewController {
         }
     }
     
-    private func toggleButton(sender: UIButton){
-        if let state = sender.titleLabel?.text{
+    private func toggleButton(sender: UIButton) {
+        if let state = sender.titleLabel?.text {
             switch state {
             case "on":
                 sender.setTitle("off", for: .normal)

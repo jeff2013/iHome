@@ -25,7 +25,7 @@ extension UIViewController {
     //Makes assumption the host viewcontroller implements UITextFieldDelegate
     //Specific setup for input textfields. 
     //Can be extended to take in more inputs.
-    func setupTextViews(textFields: [UITextField]){
+    func setupTextViews(textFields: [UITextField]) {
         for textField in textFields{
             textField.layer.borderWidth = 1.0
             textField.layer.borderColor = UIColor.white.cgColor
@@ -34,7 +34,7 @@ extension UIViewController {
         }
     }
     
-    func replaceRootController(storyBoard: String, storyBoardIdentifier: String, duration: Double, transition: UIViewAnimationOptions, completion: ()->Void){
+    func replaceRootController(storyBoard: String, storyBoardIdentifier: String, duration: Double, transition: UIViewAnimationOptions, completion: () -> Void) {
         let storyboard = UIStoryboard(name: storyBoard, bundle: nil)
         let window = UIApplication.shared.delegate?.window!
         let rootViewController = window?.rootViewController

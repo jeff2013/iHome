@@ -78,17 +78,17 @@ class RegisterViewController: UIViewController {
 }
 
 // MARK: - RegisterUITextFieldDelegate
-extension RegisterViewController: UITextFieldDelegate{
+extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 4 {
             self.view.endEditing(true)
             return false
-        }else{
-            if let nextTextField = self.view.viewWithTag(textField.tag+1) as? UITextField{
+        } else {
+            if let nextTextField = self.view.viewWithTag(textField.tag+1) as? UITextField {
                 nextTextField.becomeFirstResponder()
                 return true
-            }else{
+            } else {
                 return false
             }
         }

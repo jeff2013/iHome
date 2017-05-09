@@ -10,11 +10,11 @@ import UIKit
 import SWRevealViewController
 
 class MenuViewController: UIViewController {
-    enum Title: Int{
+    enum Title: Int {
         case home, lights, blinds, logout, count
         
-        var description: String{
-            switch self{
+        var description: String {
+            switch self {
             case .home:
                 return "Home"
             case .lights:

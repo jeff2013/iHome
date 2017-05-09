@@ -36,7 +36,7 @@ class LoginController: UIViewController {
     @IBAction func login(_ sender: Any) {
         let username = usernameTextField.text?.trimmingCharacters(in: .whitespaces)
         let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
-        if !(username?.isEmpty)! && !(password?.isEmpty)! && fetchUsers(username: username!, password: password!)  {
+        if !(username?.isEmpty)! && !(password?.isEmpty)! && fetchUsers(username: username!, password: password!) {
             KeychainService.storeToken(token: "tempToken")
             replaceRootController(storyBoard: "Main", storyBoardIdentifier: "SWRevealViewController", duration: 0.3, transition: .transitionFlipFromLeft, completion: {})
         } else {
@@ -52,7 +52,7 @@ class LoginController: UIViewController {
         return actualUsername != nil && actualPassword != nil && (actualUsername == expectedUsername) && (actualPassword == expectedPassword)
     }
     
-    private func fetchUsers(username: String, password: String) -> Bool{
+    private func fetchUsers(username: String, password: String) -> Bool {
         // Initialize Fetch Request
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
         

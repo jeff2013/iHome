@@ -12,16 +12,9 @@ import AlamofireObjectMapper
 
 class BlindsService {
     
-    //default authentication to be false
-    var shouldAuthenticate: Bool
-    
-    init(authenticate: Bool) {
-        shouldAuthenticate = authenticate
-    }
-    
-    func toggle(blindName: String, toggle: BlindsToggle, auth: Bool, completion: @escaping(Result<LightsResultModel>)->Void){
-        Alamofire.request(NetworkRouter.toggleBlinds(blindName: blindName, blindToggle: toggle)).validate(statusCode: 200..<300).responseObject { (response: DataResponse<LightsResultModel>) in
-            completion(response.result)
-        }
+    class func toggle(blindName: String, toggle: BlindsToggle, completion: @escaping(Result<BlindsResultModel>) -> Void) {
+        APIClient.default.request(router: NetworkRouter.toggleBlinds(blindName: blindName, blindToggle: toggle), completion: { (result: Result<BlindsResultModel>) in
+            completion(result)
+        })
     }
 }
