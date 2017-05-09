@@ -32,10 +32,12 @@
 		5F418ED91EBBA9CD00392EE6 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */; };
 		5F65AAAC1EBCFD75006F0CC6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65AAAB1EBCFD75006F0CC6 /* RegisterViewController.swift */; };
 		5F65AAAE1EBD0376006F0CC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65AAAD1EBD0376006F0CC6 /* StringExtension.swift */; };
-		5F65AAB31EBD3539006F0CC6 /* emulogic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F65AAB21EBD33C2006F0CC6 /* emulogic.ttf */; };
 		5F68985C1EC11EE9005F1F0A /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F68985B1EC11EE9005F1F0A /* KeychainService.swift */; };
 		5FB1B8C31EBD4D0D00E033D8 /* UIViewAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1B8C21EBD4D0D00E033D8 /* UIViewAnimationExtension.swift */; };
 		5FD172EF1EC122BD00F8802B /* BlindsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172EE1EC122BD00F8802B /* BlindsService.swift */; };
+		5FD172F11EC127EF00F8802B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172F01EC127EF00F8802B /* NotificationService.swift */; };
+		5FD172F31EC12E0000F8802B /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172F21EC12E0000F8802B /* NotificationModel.swift */; };
+		5FD172F61EC1460300F8802B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172F51EC1460300F8802B /* APIService.swift */; };
 		D425031A1AD505CFF8128F78 /* Pods_iHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,10 +92,13 @@
 		5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		5F65AAAB1EBCFD75006F0CC6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5F65AAAD1EBD0376006F0CC6 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		5F65AAB21EBD33C2006F0CC6 /* emulogic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = emulogic.ttf; path = "../../../../../Downloads/freaky-fonts_emulogic/emulogic.ttf"; sourceTree = "<group>"; };
 		5F68985B1EC11EE9005F1F0A /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		5FB1B8C21EBD4D0D00E033D8 /* UIViewAnimationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimationExtension.swift; sourceTree = "<group>"; };
 		5FD172EE1EC122BD00F8802B /* BlindsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsService.swift; sourceTree = "<group>"; };
+		5FD172F01EC127EF00F8802B /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5FD172F21EC12E0000F8802B /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		5FD172F41EC1347300F8802B /* emulogic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = emulogic.ttf; sourceTree = "<group>"; };
+		5FD172F51EC1460300F8802B /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8950F6D9B89953D8BDF966AF /* Pods-iHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C336D346FFCEAFA8141FE69 /* Pods-iHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHome/Pods-iHome.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +254,7 @@
 				5F2847451EBAA00B005FC78E /* BlindsModel.swift */,
 				5F2847531EBB892B005FC78E /* LightsResultModel.swift */,
 				5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */,
+				5FD172F21EC12E0000F8802B /* NotificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 				5F28474A1EBAA098005FC78E /* LightsService.swift */,
 				5F68985B1EC11EE9005F1F0A /* KeychainService.swift */,
 				5FD172EE1EC122BD00F8802B /* BlindsService.swift */,
+				5FD172F01EC127EF00F8802B /* NotificationService.swift */,
+				5FD172F51EC1460300F8802B /* APIService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -276,7 +284,7 @@
 		5F65AAB11EBD3381006F0CC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5F65AAB21EBD33C2006F0CC6 /* emulogic.ttf */,
+				5FD172F41EC1347300F8802B /* emulogic.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -401,7 +409,6 @@
 			files = (
 				5F2846F01EB7D029005FC78E /* LaunchScreen.storyboard in Resources */,
 				5F28473A1EB93874005FC78E /* Localizable.strings in Resources */,
-				5F65AAB31EBD3539006F0CC6 /* emulogic.ttf in Resources */,
 				5F2846ED1EB7D029005FC78E /* Assets.xcassets in Resources */,
 				5F2846E81EB7D029005FC78E /* Main.storyboard in Resources */,
 			);
@@ -582,9 +589,12 @@
 				5F2847461EBAA00B005FC78E /* BlindsModel.swift in Sources */,
 				5F65AAAC1EBCFD75006F0CC6 /* RegisterViewController.swift in Sources */,
 				5F68985C1EC11EE9005F1F0A /* KeychainService.swift in Sources */,
+				5FD172F11EC127EF00F8802B /* NotificationService.swift in Sources */,
 				5F2846EB1EB7D029005FC78E /* iHome.xcdatamodeld in Sources */,
+				5FD172F61EC1460300F8802B /* APIService.swift in Sources */,
 				5F2847411EBA90BE005FC78E /* BlindsViewController.swift in Sources */,
 				5F2847541EBB892B005FC78E /* LightsResultModel.swift in Sources */,
+				5FD172F31EC12E0000F8802B /* NotificationModel.swift in Sources */,
 				5F418ED91EBBA9CD00392EE6 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
