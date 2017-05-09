@@ -34,20 +34,13 @@ extension UIViewController {
         }
     }
     
-    func replaceRootController(storyBoardIdentifier: String, duration: Double, transition: UIViewAnimationOptions, completion: ()->Void){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //just to prevent runtime exceptions
-        guard let window = UIApplication.shared.delegate?.window else{
-            return
-        }
-        
-        //just to prevent runtime exception
-        guard let rootViewController = window?.rootViewController else{
-            return
-        }
-        
+    func replaceRootController(storyBoard: String, storyBoardIdentifier: String, duration: Double, transition: UIViewAnimationOptions, completion: ()->Void){
+        let storyboard = UIStoryboard(name: storyBoard, bundle: nil)
+        let window = UIApplication.shared.delegate?.window!
+        let rootViewController = window?.rootViewController
+
         let viewController = storyboard.instantiateViewController(withIdentifier :storyBoardIdentifier)
-        viewController.view.frame = rootViewController.view.frame
+        viewController.view.frame = (rootViewController?.view.frame)!
         viewController.view.layoutIfNeeded()
         
         UIView.transition(with: window!, duration: duration, options: transition, animations: {
@@ -55,7 +48,5 @@ extension UIViewController {
         }, completion: { completed in
             
         })
-        
-       window?.rootViewController = viewController
     }
 }

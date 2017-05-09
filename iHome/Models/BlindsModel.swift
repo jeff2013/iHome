@@ -8,6 +8,7 @@
 
 import Foundation
 
-public enum BlindsToggle: String{
-    case open, close
+public enum BlindsToggle: String {
+    case open
+    case close
 }

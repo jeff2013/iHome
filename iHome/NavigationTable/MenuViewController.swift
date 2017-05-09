@@ -8,9 +8,8 @@
 
 import UIKit
 import SWRevealViewController
-import KeychainSwift
 
-class MenuViewController: UIViewController{
+class MenuViewController: UIViewController {
     enum Title: Int{
         case home, lights, blinds, logout, count
         
@@ -37,7 +36,7 @@ class MenuViewController: UIViewController{
 }
 
 //MARK: - MenuUITableViewDataSource
-extension MenuViewController: UITableViewDataSource{
+extension MenuViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -57,7 +56,7 @@ extension MenuViewController: UITableViewDataSource{
 }
 
 //MARK: - MenuUITableViewDelegate
-extension MenuViewController:UITableViewDelegate{
+extension MenuViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch Title(rawValue: indexPath.row)!.rawValue{
         case Title.home.rawValue:
@@ -69,18 +68,15 @@ extension MenuViewController:UITableViewDelegate{
         case Title.blinds.rawValue:
             switchControllerFor(name: "Main", identifier: "BlindsViewController", animated: true)
         case Title.logout.rawValue:
-            replaceRootController(storyBoardIdentifier: "LoginViewController", duration: 0.3, transition: .transitionFlipFromRight, completion: {})
-            
-            //wipes the keychain and the authentication token
-            let keychain = KeychainSwift()
-            keychain.delete("authenticationToken")
-            keychain.clear()
+            replaceRootController(storyBoard: "Main", storyBoardIdentifier: "LoginViewController", duration: 0.3, transition: .transitionFlipFromRight, completion: {})
+            //removes authentication token
+            KeychainService.deleteToken()
         default:
             break
         }
     }
     
-    private func switchControllerFor(name: String, identifier: String, animated: Bool){
+    private func switchControllerFor(name: String, identifier: String, animated: Bool) {
         let revealViewController:SWRevealViewController = self.revealViewController()
         let mainStoryboard: UIStoryboard = UIStoryboard(name: name, bundle: nil)
         let destinationController = mainStoryboard.instantiateViewController(withIdentifier: identifier)

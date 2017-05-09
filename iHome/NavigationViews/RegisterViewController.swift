@@ -23,8 +23,11 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
         setupTextViews(textFields: [lastNameTextField, firstNameTextField, usernameTextField, passwordTextField])
+        NotificationService().addObserverFor(name: NotificationModel.LightsNotification.getNotification(), object: nil) { (Notification) in
+            print("notified")
+        }
     }
-    
+     
     override func viewWillAppear(_ animated: Bool) {
         print("register appeared")
         UIApplication.shared.statusBarStyle = .lightContent
@@ -65,7 +68,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func cancelRegistration(_ sender: Any) {
-        replaceRootController(storyBoardIdentifier: "LoginViewController", duration: 0.3, transition: .transitionCrossDissolve, completion: {})
+        replaceRootController(storyBoard: "Main", storyBoardIdentifier: "LoginViewController", duration: 0.3, transition: .transitionCrossDissolve, completion: {})
     }
     
     override func viewWillDisappear(_ animated: Bool) {

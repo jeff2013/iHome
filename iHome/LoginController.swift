@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CoreData
-import KeychainSwift
 
 class LoginController: UIViewController {
     
@@ -18,7 +17,6 @@ class LoginController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIView!
-    let keychainService = KeychainService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +36,9 @@ class LoginController: UIViewController {
     @IBAction func login(_ sender: Any) {
         let username = usernameTextField.text?.trimmingCharacters(in: .whitespaces)
         let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
-        
-        if fetchUsers(username: username!, password: password!) {
-            keychainService.storeToken(token: "tempToken")
-            //trigger next page.
-            replaceRootController(storyBoardIdentifier: "SWRevealViewController", duration: 0.3, transition: .transitionFlipFromLeft, completion: {})
+        if !(username?.isEmpty)! && !(password?.isEmpty)! && fetchUsers(username: username!, password: password!)  {
+            KeychainService.storeToken(token: "tempToken")
+            replaceRootController(storyBoard: "Main", storyBoardIdentifier: "SWRevealViewController", duration: 0.3, transition: .transitionFlipFromLeft, completion: {})
         } else {
             alertUser(title: "Login Failed".localized, message: "Invalid Username/Password".localized)
         }
@@ -51,6 +47,7 @@ class LoginController: UIViewController {
     //verifies that username and password from user is not nil
     //verifies that username and password match up with that is in the db
     //returns bool; true if login successful, false otherwise
+    //A bit redundant now since we check for nil before this point
     private func verifyLogin(actualUsername: String?, expectedUsername: String, actualPassword: String?, expectedPassword: String) -> Bool {
         return actualUsername != nil && actualPassword != nil && (actualUsername == expectedUsername) && (actualPassword == expectedPassword)
     }
@@ -92,13 +89,13 @@ class LoginController: UIViewController {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     
-    @IBAction func registerUser(_ sender: Any) {
-        replaceRootController(storyBoardIdentifier: "RegisterViewController", duration: 0.3, transition: .transitionCrossDissolve, completion: {})
+    @IBAction func showRegisterPage(_ sender: Any) {
+        replaceRootController(storyBoard: "Main", storyBoardIdentifier: "RegisterViewController", duration: 0.3, transition: .transitionCrossDissolve, completion: {})
     }
 }
 
 //MARK: - LoginTextFieldDelegate
-extension LoginController: UITextFieldDelegate{
+extension LoginController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 0{

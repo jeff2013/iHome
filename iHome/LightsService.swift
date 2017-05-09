@@ -20,7 +20,7 @@ class LightsService {
     }
     
     func toggle(lightName: String, toggle: LightToggle, auth: Bool, completion: @escaping(Result<LightsResultModel>)->Void){
-        Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle, authentication: auth)).validate(statusCode: 200..<300).responseObject { (response: DataResponse<LightsResultModel>) in
+        Alamofire.request(NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle)).validate(statusCode: 200..<300).responseObject { (response: DataResponse<LightsResultModel>) in
             completion(response.result)
         } 
     }

@@ -9,5 +9,6 @@
 import Foundation
 
 public enum LightToggle: String {
-    case on, off
+    case on
+    case off
 }

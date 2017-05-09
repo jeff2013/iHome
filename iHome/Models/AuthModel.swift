@@ -8,15 +8,12 @@
 
 import Foundation
 
-public struct AuthModel{
-    var authenticate: Bool
+public struct AuthModel {
     let username: String?
     let password: String?
     
     //Not sure if this is the best way to do it but it's clean..
-    //If authenticate, pass in a valid username/password
     init(userName:String?, pass: String?){
-        authenticate = (userName != nil && pass != nil) ? true : false
         username = userName
         password = pass
     }

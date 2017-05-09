@@ -9,21 +9,23 @@
 import Foundation
 import Alamofire
 
-public enum NetworkRouter: URLRequestConvertible{
+public enum NetworkRouter: URLRequestConvertible {
 
     static let baseURLPath = "http://requestb.in/1mswxf71"
     
-    case toggleLight(lightName: String, lightToggle: LightToggle, authentication: Bool)
-    case toggleBlinds(blindName: String, blindToggle: BlindsToggle, authentication: Bool)
+    static let timeoutInterval = 10*1000
     
-    var method: HTTPMethod{
+    case toggleLight(lightName: String, lightToggle: LightToggle)
+    case toggleBlinds(blindName: String, blindToggle: BlindsToggle)
+    
+    var method: HTTPMethod {
         switch self {
         case .toggleLight, .toggleBlinds:
             return .post
         }
     }
 
-    var path: String{
+    var path: String {
         switch self {
             case .toggleLight:
                 return "/toggleLight"
@@ -32,15 +34,19 @@ public enum NetworkRouter: URLRequestConvertible{
         }
     }
     
+    var shouldAuthenticate: Bool {
+        switch self{
+            case .toggleLight, .toggleBlinds:
+                return true
+        }
+    }
+    
     public func asURLRequest() throws -> URLRequest {
-        var shouldAuthenticate: Bool?
         let parameters: [String: Any] = {
             switch self {
-            case let .toggleLight(lightName, toggle, auth):
-                shouldAuthenticate = auth
+            case let .toggleLight(lightName, toggle):
                 return ["lightName": lightName, "toggle": toggle]
-            case let .toggleBlinds(blindName, toggle, auth):
-                shouldAuthenticate = auth
+            case let .toggleBlinds(blindName, toggle):
                 return ["blindName": blindName, "toggle": toggle]
             }
         }()
@@ -49,10 +55,9 @@ public enum NetworkRouter: URLRequestConvertible{
         
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
-        request.timeoutInterval = TimeInterval(10*1000)
+        request.timeoutInterval = TimeInterval(NetworkRouter.timeoutInterval)
         
-        let keychainService = KeychainService()
-        if shouldAuthenticate!, let token = keychainService.getToken(){
+        if shouldAuthenticate, let token = KeychainService.getToken() {
             request.setValue(token, forHTTPHeaderField: "Authorization")
         }
         return try URLEncoding.default.encode(request, with: parameters)

@@ -8,16 +8,16 @@
 
 import Foundation
 
-extension String{
+extension String {
 
     //Get a localized string with explicit comment
-    var localized:String{
+    var localized:String {
         //comment can either be self or "" or whatever.
         return NSLocalizedString(self, comment: self)
     }
     
     //Get localized string and put in a comment
-    func localized(comment: String) -> String{
+    func localized(comment: String) -> String {
         return NSLocalizedString(self, comment: comment)
     }
 }

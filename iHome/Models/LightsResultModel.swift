@@ -17,7 +17,7 @@ class LightsResultModel: Mappable{
         self.init()
     }
     
-    func mapping(map: Map){
+    func mapping(map: Map) {
         lightName <- map["lightName"]
         toggle <- map["toggle"]
     }

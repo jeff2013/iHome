@@ -51,6 +51,7 @@ class LightBulbViewController: UIViewController {
     @IBAction func toggleLight(_ sender: UIButton) {
         sender.zoomIn(scale: 1.3, duration: 0.1, delay: 0.0, options: [])
         toggleButton(sender: sender)
+        NotificationService().createNotification(notification: NotificationModel.LightsNotification)
         if let light = Light(rawValue: sender.tag) {
             //No authentication for Light
             LightsService(authenticate: false).toggle(lightName: light.stringInterpretation, toggle: LightToggle.off, auth: false) { (result) in
