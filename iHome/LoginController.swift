@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import SnapKit
 
 class LoginController: UIViewController {
     
@@ -18,10 +19,13 @@ class LoginController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIView!
     
+    @IBOutlet weak var pageTitleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
         setupTextViews(textFields: [usernameTextField, passwordTextField])
+        setupViewConstraints()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginController.dismissKeyboard))
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
@@ -31,6 +35,45 @@ class LoginController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    private func setupViewConstraints(){
+        view.removeConstraints(view.constraints)
+        
+        let textBoxSideMargins = CGFloat(26)
+        let textBoxHeight = 30
+        let titleTopMargin = 60
+        let userNameTopMargin = CGFloat(85)
+        let usernamePasswordMargin = CGFloat(8)
+        
+        pageTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view).offset(titleTopMargin)
+            make.centerX.equalTo(self.view)
+        }
+        
+        usernameTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(pageTitleLabel).offset(userNameTopMargin)
+            make.leading.equalTo(self.view).offset(textBoxSideMargins)
+            make.trailing.equalTo(self.view).offset(-textBoxSideMargins)
+            make.height.equalTo(textBoxHeight)
+        }
+        
+        passwordTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(usernameTextField).offset(usernameTextField.frame.height + usernamePasswordMargin)
+            make.leading.equalTo(usernameTextField)
+            make.trailing.equalTo(usernameTextField)
+            make.height.equalTo(textBoxHeight)
+        }
+        
+        loginButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.view)
+            make.bottom.equalTo(registerButton).offset(-20)
+        }
+        
+        registerButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.view)
+            make.bottom.equalTo(self.view).offset(-25)
+        }
     }
     
     @IBAction func login(_ sender: Any) {
