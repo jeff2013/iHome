@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RegisterViewController: UIViewController {
 
@@ -17,13 +18,13 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
-    
     @IBOutlet weak var cancelButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
         setupTextViews(textFields: [lastNameTextField, firstNameTextField, usernameTextField, passwordTextField])
-        NotificationService().addObserverFor(name: NotificationModel.LightsNotification.getNotification(), object: nil) { (Notification) in
+        NotificationService.addObserver(for: NotificationType.lights.name, object: nil) { (Notification) in
             print("notified")
         }
     }
@@ -39,32 +40,38 @@ class RegisterViewController: UIViewController {
         let username = usernameTextField.text?.trimmingCharacters(in: .whitespaces)
         let password = passwordTextField.text?.trimmingCharacters(in: .whitespaces)
         
-        let context = getContext()
-        
-        if firstName != "" && lastName != "" && username != "" && password != "" {
-            let user = User(context: context)
-            user.firstName = firstName
-            user.lastName = lastName
-            user.username = username
-            user.password = password
+        if containsValues(for: [firstName!, lastName!, username!, password!]) {
             do {
-                try context.save()
-                let alertController = UIAlertController(title: "Registration successful".localized, message: "Registration successful!".localized, preferredStyle: .alert)
-                 let okAction = UIAlertAction(title: "Ok".localized, style: .cancel, handler: { (action) in
-                    self.performSegue(withIdentifier: "registeredSegue", sender: nil)
-                 })
-                
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-                
-                alertUser(title: "Registration successful".localized, message: "Registration successful!".localized)
-            } catch let error as NSError {
+                let realm = try Realm()
+                try realm.write {
+                    let newUser = Authentication ()
+                    newUser.firstName = firstName!
+                    newUser.lastName = lastName!
+                    newUser.username = username!
+                    newUser.password = password!
+                    realm.add(newUser)
+                    
+                    let alertController = UIAlertController(title: "Registration successful".localized, message: "Registration successful!".localized, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok".localized, style: .cancel, handler: { (action) in
+                        self.performSegue(withIdentifier: "registeredSegue", sender: nil)
+                    })
+                    
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            } catch {
                 alertUser(title: "Registration Failed".localized, message: "Please enter a valid Username and Password".localized)
                 print(error)
             }
         } else {
             alertUser(title: "Registration Failed".localized, message: "Please enter a valid Username and Password".localized)
         }
+    }
+    
+    func containsValues(for strings: [String]) -> Bool {
+        return strings.reduce(true, { (isEmpty, string) -> Bool in
+            isEmpty && !string.isEmpty
+        })
     }
     
     @IBAction func cancelRegistration(_ sender: Any) {

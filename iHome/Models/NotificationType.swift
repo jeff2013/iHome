@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum NotificationModel: String {
-    case DefaultNotification, LightsNotification, BlindsNotification
+enum NotificationType: String {
+    case defaultN, lights, blinds
     
-    func getNotification() -> NSNotification.Name {
+    var name: NSNotification.Name {
         return Notification.Name(rawValue: self.rawValue)
     }
 }

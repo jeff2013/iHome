@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 import SnapKit
+import RealmSwift
 
 class LoginController: UIViewController {
     
@@ -20,7 +21,6 @@ class LoginController: UIViewController {
     @IBOutlet weak var registerButton: UIView!
     
     @IBOutlet weak var pageTitleLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "purpleGradient.jpg")!)
@@ -37,7 +37,7 @@ class LoginController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
-    private func setupViewConstraints(){
+    private func setupViewConstraints() {
         view.removeConstraints(view.constraints)
         
         let textBoxSideMargins = CGFloat(26)
@@ -96,29 +96,24 @@ class LoginController: UIViewController {
     }
     
     private func fetchUsers(username: String, password: String) -> Bool {
-        // Initialize Fetch Request
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
-        
-        // Create Entity Description
-        let entityDescription = NSEntityDescription.entity(forEntityName: "User", in: getContext())
-        
-        // Configure Fetch Request
-        fetchRequest.entity = entityDescription
-        
-        do {
-            let result = try getContext().fetch(fetchRequest)
+        do{
+            let realm = try Realm()
+            
+            let users: Results<Authentication> = {realm.objects(Authentication.self)}()
+            
             var foundUser = false
-            result.forEach { user in
-                if let expectedUsername = (user as AnyObject).value(forKey: "username") as? String, let expectedPassword = (user as AnyObject).value(forKey: "password") as? String {
-                    foundUser = verifyLogin(actualUsername: username, expectedUsername: expectedUsername, actualPassword: password, expectedPassword: expectedPassword)
+            if users.count == 0 {
+                // no registered users
+                return foundUser
+            } else {
+                users.forEach { user in
+                    foundUser = verifyLogin(actualUsername: username, expectedUsername: user.username, actualPassword: password, expectedPassword: user.password)
                 }
+                return foundUser
             }
-            return foundUser
         } catch {
-            let fetchError = error as NSError
-            print(fetchError)
+            return false
         }
-        return false
     }
 
     //Calls this function when the tap is recognized.

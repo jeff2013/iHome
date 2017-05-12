@@ -1,15 +1,15 @@
 //
-//  LightsResultModel.swift
+//  BlindsResultModel.swift
 //  iHome
 //
-//  Created by Jeff Chang on 2017-05-04.
+//  Created by Jeff Chang on 2017-05-09.
 //  Copyright © 2017 Jeff Chang. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-class LightsResultModel: Mappable {
+class BlindsResult: Mappable {
     var lightName: String?
     var toggle: String?
     

@@ -8,12 +8,12 @@
 
 import Foundation
 
-class DemoDelegate: PersonProtocol {
+class DemoDelegate: Person {
     
     var delegator: Person!
     
     init() {
-        delegator.delegate = self
+        delegator = self
     }
     
     func getAge() -> Int {

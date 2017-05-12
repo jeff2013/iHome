@@ -12,8 +12,8 @@ import AlamofireObjectMapper
 
 class BlindsService {
     
-    class func toggle(blindName: String, toggle: BlindsToggle, completion: @escaping(Result<BlindsResultModel>) -> Void) {
-        APIClient.default.request(router: NetworkRouter.toggleBlinds(blindName: blindName, blindToggle: toggle), completion: { (result: Result<BlindsResultModel>) in
+    class func toggle(for blindName: String, toggle: BlindsToggle, completion: @escaping(Result<BlindsResult>) -> Void) {
+        APIClient.default.request(router: NetworkRouter.toggleBlinds(blindName: blindName, blindToggle: toggle), completion: { (result: Result<BlindsResult>) in
             completion(result)
         })
     }

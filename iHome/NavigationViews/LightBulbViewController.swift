@@ -39,16 +39,16 @@ class LightBulbViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "greyGradient.jpg")!)
-        pageTitleLabel.font = TextStyleModel.FontStyle.pageTitle.getFont()
-        setButtonLabels(labels: [mainLampLabel, deskLampLabel, moodLightLabel])
+        pageTitleLabel.font = UIFont(with: Styles.FontStyle.pageTitle)
+        setButtonLabels(for: [mainLampLabel, deskLampLabel, moodLightLabel])
         
         menuButton.target = revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
     }
     
-    func setButtonLabels(labels: [UILabel]) {
-        for label in labels {
-            label.font = TextStyleModel.FontStyle.buttonLabels.getFont()
+    func setButtonLabels(for labels: [UILabel]) {
+        labels.forEach { (label) in
+            label.font = UIFont(with: Styles.FontStyle.buttonLabels)
         }
     }
     
@@ -56,9 +56,9 @@ class LightBulbViewController: UIViewController {
     @IBAction func toggleLight(_ sender: UIButton) {
         sender.zoomIn(scale: 1.3, duration: 0.1, delay: 0.0, options: [])
         toggleButton(sender: sender)
-        NotificationService().createNotification(notification: NotificationModel.LightsNotification)
+        NotificationService.postNotification(withName: NotificationType.lights)
         if let light = Light(rawValue: sender.tag) {
-            LightsService.toggle(lightName: light.stringInterpretation, toggle: LightToggle.off, auth: false) { (result) in
+            LightsService.toggle(for: light.stringInterpretation, toggle: LightToggle.off, auth: false) { (result) in
                 guard result.isSuccess else{
                     //Not sure what to do with the error message
                     print(result.error.debugDescription)

@@ -13,8 +13,8 @@ import ObjectMapper
 
 class LightsService {
     
-    class func toggle(lightName: String, toggle: LightToggle, auth: Bool, completion: @escaping(Result<LightsResultModel>) -> Void) {
-        APIClient.default.request(router: NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle), completion: { (result: Result<LightsResultModel>) in
+    class func toggle(for lightName: String, toggle: LightToggle, auth: Bool, completion: @escaping(Result<LightsResult>) -> Void) {
+        APIClient.default.request(router: NetworkRouter.toggleLight(lightName: lightName, lightToggle: toggle), completion: { (result: Result<LightsResult>) in
             completion(result)
         })
     }

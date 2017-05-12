@@ -12,6 +12,8 @@ target 'iHome' do
   pod 'AlamofireObjectMapper', '~>4.0'
   pod 'KeychainSwift', '~> 8.0'
   pod 'SnapKit', '~> 3.2.0'
+  pod 'Realm', '~> 2.7.0'
+  pod 'RealmSwift', '~> 2.7.0'
 
   target 'iHomeTests' do
     inherit! :search_paths

@@ -10,18 +10,25 @@ import Foundation
 import UIKit
 
 //Don't actually need this to be a class but in the future when there are more things in here it would be good to have a class
-class TextStyleModel {
+class Styles {
     
     enum FontStyle {
         case buttonLabels
         case pageTitle
         
-        func getFont() -> UIFont {
+        var font: String {
             switch self {
-                case .buttonLabels:
-                    return UIFont(name: "emulogic", size: 10)!
-                case .pageTitle:
-                    return UIFont(name: "emulogic", size: 17)!
+            case .buttonLabels, .pageTitle:
+                return "emulogic"
+            }
+        }
+        var fontSize: CGFloat {
+            switch self {
+            case .buttonLabels:
+                return 10
+            case .pageTitle:
+                return 17
+                
             }
         }
     }

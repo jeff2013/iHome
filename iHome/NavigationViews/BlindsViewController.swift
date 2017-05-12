@@ -13,7 +13,7 @@ class BlindsViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    enum Blind: Int{
+    enum Blind: Int {
         case bedroom, livingroom, patio
         
         var stringInterpretation: String {
@@ -41,7 +41,7 @@ class BlindsViewController: UIViewController {
         toggleButton(sender: sender)
         if let blind = Blind(rawValue: sender.tag) {
             //No authentication for Blinds
-            BlindsService.toggle(blindName: blind.stringInterpretation, toggle: BlindsToggle.close) { (result) in
+            BlindsService.toggle(for: blind.stringInterpretation, toggle: BlindsToggle.close) { (result) in
                 guard result.isSuccess else{
                     //Not sure what to do with the error message
                     print(result.error.debugDescription)

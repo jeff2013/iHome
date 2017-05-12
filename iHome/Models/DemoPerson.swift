@@ -9,12 +9,12 @@
 import Foundation
 
 //Delegator class
-class Person {
+class DemoPerson {
     
-    weak var delegate: PersonProtocol?
+    weak var delegate: Person?
     
-    init(withDelegate: PersonProtocol) {
-        delegate = withDelegate
+    init(with delegate: Person) {
+        self.delegate = delegate
     }
     
     func printName() {
@@ -23,6 +23,7 @@ class Person {
         } else {
             print("error")
         }
+        print( delegate != nil ? delegate!.getName() : "error" )
     }
     
     func printAge() {

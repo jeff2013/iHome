@@ -10,11 +10,11 @@
 		01D12B1728FC0506DE09EC0C /* Pods_iHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84E04A75F84D7583E542B8A /* Pods_iHomeTests.framework */; };
 		47209D03A3627355AE8219F5 /* Pods_iHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE7A7D85F7A3F697B085241 /* Pods_iHome.framework */; };
 		5F265D531EC22D540008B4AE /* emulogic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F265D521EC22D540008B4AE /* emulogic.ttf */; };
-		5F265D551EC22E4E0008B4AE /* TextStyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D541EC22E4E0008B4AE /* TextStyleModel.swift */; };
+		5F265D551EC22E4E0008B4AE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D541EC22E4E0008B4AE /* Styles.swift */; };
 		5F265D571EC23FC40008B4AE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D561EC23FC40008B4AE /* APIClient.swift */; };
-		5F265D591EC2603B0008B4AE /* BlindsResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D581EC2603B0008B4AE /* BlindsResultModel.swift */; };
-		5F265D5D1EC2656E0008B4AE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D5C1EC2656E0008B4AE /* Person.swift */; };
-		5F265D5F1EC265A10008B4AE /* PersonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D5E1EC265A10008B4AE /* PersonProtocol.swift */; };
+		5F265D591EC2603B0008B4AE /* BlindsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D581EC2603B0008B4AE /* BlindsResult.swift */; };
+		5F265D5D1EC2656E0008B4AE /* DemoPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D5C1EC2656E0008B4AE /* DemoPerson.swift */; };
+		5F265D5F1EC265A10008B4AE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D5E1EC265A10008B4AE /* Person.swift */; };
 		5F265D611EC265FC0008B4AE /* DemoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D601EC265FC0008B4AE /* DemoDelegate.swift */; };
 		5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E21EB7D029005FC78E /* AppDelegate.swift */; };
 		5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E41EB7D029005FC78E /* HomeController.swift */; };
@@ -35,15 +35,17 @@
 		5F2847461EBAA00B005FC78E /* BlindsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847451EBAA00B005FC78E /* BlindsModel.swift */; };
 		5F28474B1EBAA098005FC78E /* LightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28474A1EBAA098005FC78E /* LightsService.swift */; };
 		5F2847521EBAA5F8005FC78E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */; };
-		5F2847541EBB892B005FC78E /* LightsResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847531EBB892B005FC78E /* LightsResultModel.swift */; };
+		5F2847541EBB892B005FC78E /* LightsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2847531EBB892B005FC78E /* LightsResult.swift */; };
+		5F40B4011EC5330B00E0D1A2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F40B4001EC5330B00E0D1A2 /* Authentication.swift */; };
 		5F418ED91EBBA9CD00392EE6 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */; };
+		5F477B6B1EC3766A00559F91 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F477B6A1EC3766A00559F91 /* UIFontExtension.swift */; };
 		5F65AAAC1EBCFD75006F0CC6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65AAAB1EBCFD75006F0CC6 /* RegisterViewController.swift */; };
 		5F65AAAE1EBD0376006F0CC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65AAAD1EBD0376006F0CC6 /* StringExtension.swift */; };
 		5F68985C1EC11EE9005F1F0A /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F68985B1EC11EE9005F1F0A /* KeychainService.swift */; };
 		5FB1B8C31EBD4D0D00E033D8 /* UIViewAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1B8C21EBD4D0D00E033D8 /* UIViewAnimationExtension.swift */; };
 		5FD172EF1EC122BD00F8802B /* BlindsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172EE1EC122BD00F8802B /* BlindsService.swift */; };
 		5FD172F11EC127EF00F8802B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172F01EC127EF00F8802B /* NotificationService.swift */; };
-		5FD172F31EC12E0000F8802B /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172F21EC12E0000F8802B /* NotificationModel.swift */; };
+		5FD172F31EC12E0000F8802B /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172F21EC12E0000F8802B /* NotificationType.swift */; };
 		D425031A1AD505CFF8128F78 /* Pods_iHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,11 +72,11 @@
 		2E32AF91C18D4B481DA95D31 /* Pods-iHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHome/Pods-iHome.debug.xcconfig"; sourceTree = "<group>"; };
 		5B93183428691FD8E5F4FEC7 /* Pods-iHomeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5F265D521EC22D540008B4AE /* emulogic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = emulogic.ttf; sourceTree = "<group>"; };
-		5F265D541EC22E4E0008B4AE /* TextStyleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyleModel.swift; sourceTree = "<group>"; };
+		5F265D541EC22E4E0008B4AE /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		5F265D561EC23FC40008B4AE /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		5F265D581EC2603B0008B4AE /* BlindsResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsResultModel.swift; sourceTree = "<group>"; };
-		5F265D5C1EC2656E0008B4AE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		5F265D5E1EC265A10008B4AE /* PersonProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProtocol.swift; sourceTree = "<group>"; };
+		5F265D581EC2603B0008B4AE /* BlindsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsResult.swift; sourceTree = "<group>"; };
+		5F265D5C1EC2656E0008B4AE /* DemoPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPerson.swift; sourceTree = "<group>"; };
+		5F265D5E1EC265A10008B4AE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5F265D601EC265FC0008B4AE /* DemoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDelegate.swift; sourceTree = "<group>"; };
 		5F2846DF1EB7D029005FC78E /* iHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2846E21EB7D029005FC78E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,15 +103,17 @@
 		5F2847451EBAA00B005FC78E /* BlindsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsModel.swift; sourceTree = "<group>"; };
 		5F28474A1EBAA098005FC78E /* LightsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsService.swift; sourceTree = "<group>"; };
 		5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		5F2847531EBB892B005FC78E /* LightsResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsResultModel.swift; sourceTree = "<group>"; };
+		5F2847531EBB892B005FC78E /* LightsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsResult.swift; sourceTree = "<group>"; };
+		5F40B4001EC5330B00E0D1A2 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		5F477B6A1EC3766A00559F91 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		5F65AAAB1EBCFD75006F0CC6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5F65AAAD1EBD0376006F0CC6 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5F68985B1EC11EE9005F1F0A /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		5FB1B8C21EBD4D0D00E033D8 /* UIViewAnimationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimationExtension.swift; sourceTree = "<group>"; };
 		5FD172EE1EC122BD00F8802B /* BlindsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsService.swift; sourceTree = "<group>"; };
 		5FD172F01EC127EF00F8802B /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		5FD172F21EC12E0000F8802B /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		5FD172F21EC12E0000F8802B /* NotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		72DBF711EC5357A222EE46AB /* Pods_iHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8950F6D9B89953D8BDF966AF /* Pods-iHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHomeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHomeTests/Pods-iHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C336D346FFCEAFA8141FE69 /* Pods-iHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHome/Pods-iHome.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,7 +175,7 @@
 		5F265D5A1EC2653C0008B4AE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				5F265D5E1EC265A10008B4AE /* PersonProtocol.swift */,
+				5F265D5E1EC265A10008B4AE /* Person.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -272,13 +276,14 @@
 			children = (
 				5F2847431EBA9E9F005FC78E /* LightsModel.swift */,
 				5F2847451EBAA00B005FC78E /* BlindsModel.swift */,
-				5F2847531EBB892B005FC78E /* LightsResultModel.swift */,
+				5F2847531EBB892B005FC78E /* LightsResult.swift */,
 				5F418ED81EBBA9CD00392EE6 /* AuthModel.swift */,
-				5FD172F21EC12E0000F8802B /* NotificationModel.swift */,
-				5F265D541EC22E4E0008B4AE /* TextStyleModel.swift */,
-				5F265D581EC2603B0008B4AE /* BlindsResultModel.swift */,
-				5F265D5C1EC2656E0008B4AE /* Person.swift */,
+				5FD172F21EC12E0000F8802B /* NotificationType.swift */,
+				5F265D541EC22E4E0008B4AE /* Styles.swift */,
+				5F265D581EC2603B0008B4AE /* BlindsResult.swift */,
+				5F265D5C1EC2656E0008B4AE /* DemoPerson.swift */,
 				5F265D601EC265FC0008B4AE /* DemoDelegate.swift */,
+				5F40B4001EC5330B00E0D1A2 /* Authentication.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				5F2847511EBAA5F8005FC78E /* UIViewControllerExtension.swift */,
 				5F65AAAD1EBD0376006F0CC6 /* StringExtension.swift */,
 				5FB1B8C21EBD4D0D00E033D8 /* UIViewAnimationExtension.swift */,
+				5F477B6A1EC3766A00559F91 /* UIFontExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -598,16 +604,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F265D5D1EC2656E0008B4AE /* Person.swift in Sources */,
+				5F265D5D1EC2656E0008B4AE /* DemoPerson.swift in Sources */,
 				5F2847441EBA9E9F005FC78E /* LightsModel.swift in Sources */,
 				5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */,
 				5F28474B1EBAA098005FC78E /* LightsService.swift in Sources */,
 				5F265D571EC23FC40008B4AE /* APIClient.swift in Sources */,
 				5F2847141EB7D297005FC78E /* LoginController.swift in Sources */,
 				5F28473F1EBA3E41005FC78E /* NetworkRouter.swift in Sources */,
-				5F265D5F1EC265A10008B4AE /* PersonProtocol.swift in Sources */,
+				5F265D5F1EC265A10008B4AE /* Person.swift in Sources */,
 				5FB1B8C31EBD4D0D00E033D8 /* UIViewAnimationExtension.swift in Sources */,
-				5F265D551EC22E4E0008B4AE /* TextStyleModel.swift in Sources */,
+				5F265D551EC22E4E0008B4AE /* Styles.swift in Sources */,
 				5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */,
 				5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */,
 				5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */,
@@ -615,16 +621,18 @@
 				5F2847291EB7F786005FC78E /* TableCell.swift in Sources */,
 				5FD172EF1EC122BD00F8802B /* BlindsService.swift in Sources */,
 				5F2847521EBAA5F8005FC78E /* UIViewControllerExtension.swift in Sources */,
+				5F477B6B1EC3766A00559F91 /* UIFontExtension.swift in Sources */,
 				5F2847461EBAA00B005FC78E /* BlindsModel.swift in Sources */,
-				5F265D591EC2603B0008B4AE /* BlindsResultModel.swift in Sources */,
+				5F265D591EC2603B0008B4AE /* BlindsResult.swift in Sources */,
 				5F65AAAC1EBCFD75006F0CC6 /* RegisterViewController.swift in Sources */,
 				5F68985C1EC11EE9005F1F0A /* KeychainService.swift in Sources */,
 				5F265D611EC265FC0008B4AE /* DemoDelegate.swift in Sources */,
+				5F40B4011EC5330B00E0D1A2 /* Authentication.swift in Sources */,
 				5FD172F11EC127EF00F8802B /* NotificationService.swift in Sources */,
 				5F2846EB1EB7D029005FC78E /* iHome.xcdatamodeld in Sources */,
 				5F2847411EBA90BE005FC78E /* BlindsViewController.swift in Sources */,
-				5F2847541EBB892B005FC78E /* LightsResultModel.swift in Sources */,
-				5FD172F31EC12E0000F8802B /* NotificationModel.swift in Sources */,
+				5F2847541EBB892B005FC78E /* LightsResult.swift in Sources */,
+				5FD172F31EC12E0000F8802B /* NotificationType.swift in Sources */,
 				5F418ED91EBBA9CD00392EE6 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

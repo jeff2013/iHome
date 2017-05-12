@@ -13,10 +13,10 @@ public struct AuthModel {
     let password: String?
     
     //Not sure if this is the best way to do it but it's clean..
-    init(userName:String?, pass: String?) {
-        username = userName
-        password = pass
-    }
+//    init(userName:String?, pass: String?) {
+//        username = userName
+//        password = pass
+//    }
 }
 
 public class Auth {
@@ -25,7 +25,7 @@ public class Auth {
         return instance
     }()
     
-    var authModel:AuthModel = AuthModel(userName: nil, pass: nil)
+    var authModel: AuthModel = AuthModel(username: nil, password: nil)
     
     init(){
     }
