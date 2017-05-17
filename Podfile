@@ -14,6 +14,7 @@ target 'iHome' do
   pod 'SnapKit', '~> 3.2.0'
   pod 'Realm', '~> 2.7.0'
   pod 'RealmSwift', '~> 2.7.0'
+  pod 'JTAppleCalendar', :git => 'https://github.com/patchthecode/JTAppleCalendar.git'
 
   target 'iHomeTests' do
     inherit! :search_paths

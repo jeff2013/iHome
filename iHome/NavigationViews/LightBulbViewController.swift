@@ -36,6 +36,10 @@ class LightBulbViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var mainLampButton: UIButton!
     
+    @IBOutlet weak var messageLabel: UILabel!
+
+    private let homeViewController = HomeController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "greyGradient.jpg")!)
@@ -44,6 +48,7 @@ class LightBulbViewController: UIViewController {
         
         menuButton.target = revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        homeViewController.delegate = self
     }
     
     func setButtonLabels(for labels: [UILabel]) {
@@ -87,5 +92,12 @@ class LightBulbViewController: UIViewController {
         }else {
             self.alertUser(title: "Error".localized, message: "An error has occurred".localized)
         }
+    }
+}
+
+// MARK : - Message Extension
+extension LightBulbViewController: DataModel {
+    func didRecieveUpdate(data: String) {
+        messageLabel.text = data
     }
 }

@@ -16,15 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        setRootViewController()
+        setRootViewController(onboarding: false)
         return true
     }
     
-    private func setRootViewController(){
+    private func setRootViewController(onboarding: Bool){
         window = UIWindow(frame: UIScreen.main.bounds)
-        let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-        window?.rootViewController = mainViewController
-        window?.makeKeyAndVisible()
+        if onboarding {
+            let onboardingViewController = UIStoryboard(name: "OnboardingViewController", bundle: nil).instantiateInitialViewController()
+                window?.rootViewController = onboardingViewController
+                window?.makeKeyAndVisible()
+        } else {
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+            window?.rootViewController = mainViewController
+            window?.makeKeyAndVisible()
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

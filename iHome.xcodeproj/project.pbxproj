@@ -13,12 +13,9 @@
 		5F265D551EC22E4E0008B4AE /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D541EC22E4E0008B4AE /* Styles.swift */; };
 		5F265D571EC23FC40008B4AE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D561EC23FC40008B4AE /* APIClient.swift */; };
 		5F265D591EC2603B0008B4AE /* BlindsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D581EC2603B0008B4AE /* BlindsResult.swift */; };
-		5F265D5D1EC2656E0008B4AE /* DemoPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D5C1EC2656E0008B4AE /* DemoPerson.swift */; };
-		5F265D5F1EC265A10008B4AE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D5E1EC265A10008B4AE /* Person.swift */; };
-		5F265D611EC265FC0008B4AE /* DemoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D601EC265FC0008B4AE /* DemoDelegate.swift */; };
+		5F265D5F1EC265A10008B4AE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F265D5E1EC265A10008B4AE /* DataModel.swift */; };
 		5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E21EB7D029005FC78E /* AppDelegate.swift */; };
 		5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E41EB7D029005FC78E /* HomeController.swift */; };
-		5F2846E81EB7D029005FC78E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2846E61EB7D029005FC78E /* Main.storyboard */; };
 		5F2846EB1EB7D029005FC78E /* iHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F2846E91EB7D029005FC78E /* iHome.xcdatamodeld */; };
 		5F2846ED1EB7D029005FC78E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2846EC1EB7D029005FC78E /* Assets.xcassets */; };
 		5F2846F01EB7D029005FC78E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2846EE1EB7D029005FC78E /* LaunchScreen.storyboard */; };
@@ -42,6 +39,12 @@
 		5F65AAAC1EBCFD75006F0CC6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65AAAB1EBCFD75006F0CC6 /* RegisterViewController.swift */; };
 		5F65AAAE1EBD0376006F0CC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65AAAD1EBD0376006F0CC6 /* StringExtension.swift */; };
 		5F68985C1EC11EE9005F1F0A /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F68985B1EC11EE9005F1F0A /* KeychainService.swift */; };
+		5F80F9691ECCCFD1001A26AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F80F9671ECCCFD1001A26AD /* Main.storyboard */; };
+		5F8AB93F1EC91E4100905EA8 /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8AB93E1EC91E4100905EA8 /* OnboardingViewController.storyboard */; };
+		5F8AB9411EC91E6300905EA8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AB9401EC91E6300905EA8 /* OnboardingViewController.swift */; };
+		5FA751D41ECA32FE00F5055C /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA751D31ECA32FE00F5055C /* CellView.xib */; };
+		5FA751D61ECA339D00F5055C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA751D51ECA339D00F5055C /* CellView.swift */; };
+		5FA751D81ECA7EAD00F5055C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA751D71ECA7EAD00F5055C /* CalendarViewController.swift */; };
 		5FB1B8C31EBD4D0D00E033D8 /* UIViewAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB1B8C21EBD4D0D00E033D8 /* UIViewAnimationExtension.swift */; };
 		5FD172EF1EC122BD00F8802B /* BlindsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172EE1EC122BD00F8802B /* BlindsService.swift */; };
 		5FD172F11EC127EF00F8802B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD172F01EC127EF00F8802B /* NotificationService.swift */; };
@@ -75,13 +78,10 @@
 		5F265D541EC22E4E0008B4AE /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		5F265D561EC23FC40008B4AE /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5F265D581EC2603B0008B4AE /* BlindsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsResult.swift; sourceTree = "<group>"; };
-		5F265D5C1EC2656E0008B4AE /* DemoPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPerson.swift; sourceTree = "<group>"; };
-		5F265D5E1EC265A10008B4AE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		5F265D601EC265FC0008B4AE /* DemoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDelegate.swift; sourceTree = "<group>"; };
+		5F265D5E1EC265A10008B4AE /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		5F2846DF1EB7D029005FC78E /* iHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2846E21EB7D029005FC78E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F2846E41EB7D029005FC78E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		5F2846E71EB7D029005FC78E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F2846EA1EB7D029005FC78E /* iHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iHome.xcdatamodel; sourceTree = "<group>"; };
 		5F2846EC1EB7D029005FC78E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2846EF1EB7D029005FC78E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,6 +110,12 @@
 		5F65AAAB1EBCFD75006F0CC6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5F65AAAD1EBD0376006F0CC6 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5F68985B1EC11EE9005F1F0A /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		5F80F9681ECCCFD1001A26AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F8AB93E1EC91E4100905EA8 /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
+		5F8AB9401EC91E6300905EA8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		5FA751D31ECA32FE00F5055C /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		5FA751D51ECA339D00F5055C /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		5FA751D71ECA7EAD00F5055C /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5FB1B8C21EBD4D0D00E033D8 /* UIViewAnimationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimationExtension.swift; sourceTree = "<group>"; };
 		5FD172EE1EC122BD00F8802B /* BlindsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsService.swift; sourceTree = "<group>"; };
 		5FD172F01EC127EF00F8802B /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -175,7 +181,7 @@
 		5F265D5A1EC2653C0008B4AE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				5F265D5E1EC265A10008B4AE /* Person.swift */,
+				5F265D5E1EC265A10008B4AE /* DataModel.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 		5F2846E11EB7D029005FC78E /* iHome */ = {
 			isa = PBXGroup;
 			children = (
+				5FA751D21ECA32DA00F5055C /* Calendar */,
+				5F8AB93D1EC91E2100905EA8 /* Onboarding */,
 				5F265D5A1EC2653C0008B4AE /* Protocols */,
 				5F65AAB11EBD3381006F0CC6 /* Resources */,
 				5F28474E1EBAA586005FC78E /* Extensions */,
@@ -215,11 +223,11 @@
 				5F28473B1EB94CE3005FC78E /* NavigationViews */,
 				5F2846E21EB7D029005FC78E /* AppDelegate.swift */,
 				5F2847131EB7D297005FC78E /* LoginController.swift */,
-				5F2846E61EB7D029005FC78E /* Main.storyboard */,
 				5F2846EC1EB7D029005FC78E /* Assets.xcassets */,
 				5F2846EE1EB7D029005FC78E /* LaunchScreen.storyboard */,
 				5F2846F11EB7D029005FC78E /* Info.plist */,
 				5F2846E91EB7D029005FC78E /* iHome.xcdatamodeld */,
+				5F80F9671ECCCFD1001A26AD /* Main.storyboard */,
 				5F2847391EB93874005FC78E /* Localizable.strings */,
 			);
 			path = iHome;
@@ -281,8 +289,6 @@
 				5FD172F21EC12E0000F8802B /* NotificationType.swift */,
 				5F265D541EC22E4E0008B4AE /* Styles.swift */,
 				5F265D581EC2603B0008B4AE /* BlindsResult.swift */,
-				5F265D5C1EC2656E0008B4AE /* DemoPerson.swift */,
-				5F265D601EC265FC0008B4AE /* DemoDelegate.swift */,
 				5F40B4001EC5330B00E0D1A2 /* Authentication.swift */,
 			);
 			path = Models;
@@ -317,6 +323,25 @@
 				5F265D521EC22D540008B4AE /* emulogic.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F8AB93D1EC91E2100905EA8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5F8AB93E1EC91E4100905EA8 /* OnboardingViewController.storyboard */,
+				5F8AB9401EC91E6300905EA8 /* OnboardingViewController.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		5FA751D21ECA32DA00F5055C /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				5FA751D31ECA32FE00F5055C /* CellView.xib */,
+				5FA751D51ECA339D00F5055C /* CellView.swift */,
+				5FA751D71ECA7EAD00F5055C /* CalendarViewController.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,11 +462,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F80F9691ECCCFD1001A26AD /* Main.storyboard in Resources */,
+				5F8AB93F1EC91E4100905EA8 /* OnboardingViewController.storyboard in Resources */,
 				5F2846F01EB7D029005FC78E /* LaunchScreen.storyboard in Resources */,
 				5F28473A1EB93874005FC78E /* Localizable.strings in Resources */,
+				5FA751D41ECA32FE00F5055C /* CellView.xib in Resources */,
 				5F265D531EC22D540008B4AE /* emulogic.ttf in Resources */,
 				5F2846ED1EB7D029005FC78E /* Assets.xcassets in Resources */,
-				5F2846E81EB7D029005FC78E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,20 +631,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F265D5D1EC2656E0008B4AE /* DemoPerson.swift in Sources */,
 				5F2847441EBA9E9F005FC78E /* LightsModel.swift in Sources */,
 				5F2846E51EB7D029005FC78E /* HomeController.swift in Sources */,
 				5F28474B1EBAA098005FC78E /* LightsService.swift in Sources */,
 				5F265D571EC23FC40008B4AE /* APIClient.swift in Sources */,
 				5F2847141EB7D297005FC78E /* LoginController.swift in Sources */,
 				5F28473F1EBA3E41005FC78E /* NetworkRouter.swift in Sources */,
-				5F265D5F1EC265A10008B4AE /* Person.swift in Sources */,
+				5F265D5F1EC265A10008B4AE /* DataModel.swift in Sources */,
 				5FB1B8C31EBD4D0D00E033D8 /* UIViewAnimationExtension.swift in Sources */,
 				5F265D551EC22E4E0008B4AE /* Styles.swift in Sources */,
 				5F28472F1EB8E92D005FC78E /* LightBulbViewController.swift in Sources */,
 				5F28472D1EB7F9D7005FC78E /* MenuViewController.swift in Sources */,
 				5F2846E31EB7D029005FC78E /* AppDelegate.swift in Sources */,
+				5FA751D81ECA7EAD00F5055C /* CalendarViewController.swift in Sources */,
 				5F65AAAE1EBD0376006F0CC6 /* StringExtension.swift in Sources */,
+				5F8AB9411EC91E6300905EA8 /* OnboardingViewController.swift in Sources */,
 				5F2847291EB7F786005FC78E /* TableCell.swift in Sources */,
 				5FD172EF1EC122BD00F8802B /* BlindsService.swift in Sources */,
 				5F2847521EBAA5F8005FC78E /* UIViewControllerExtension.swift in Sources */,
@@ -626,11 +654,11 @@
 				5F265D591EC2603B0008B4AE /* BlindsResult.swift in Sources */,
 				5F65AAAC1EBCFD75006F0CC6 /* RegisterViewController.swift in Sources */,
 				5F68985C1EC11EE9005F1F0A /* KeychainService.swift in Sources */,
-				5F265D611EC265FC0008B4AE /* DemoDelegate.swift in Sources */,
 				5F40B4011EC5330B00E0D1A2 /* Authentication.swift in Sources */,
 				5FD172F11EC127EF00F8802B /* NotificationService.swift in Sources */,
 				5F2846EB1EB7D029005FC78E /* iHome.xcdatamodeld in Sources */,
 				5F2847411EBA90BE005FC78E /* BlindsViewController.swift in Sources */,
+				5FA751D61ECA339D00F5055C /* CellView.swift in Sources */,
 				5F2847541EBB892B005FC78E /* LightsResult.swift in Sources */,
 				5FD172F31EC12E0000F8802B /* NotificationType.swift in Sources */,
 				5F418ED91EBBA9CD00392EE6 /* AuthModel.swift in Sources */,
@@ -669,20 +697,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5F2846E61EB7D029005FC78E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F2846E71EB7D029005FC78E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5F2846EE1EB7D029005FC78E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5F2846EF1EB7D029005FC78E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5F80F9671ECCCFD1001A26AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F80F9681ECCCFD1001A26AD /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

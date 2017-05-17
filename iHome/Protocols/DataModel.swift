@@ -9,7 +9,6 @@
 import Foundation
 
 //class means only classes can adopt this protocol
-protocol Person: class {
-    func getName() -> String
-    func getAge() -> Int
+protocol DataModel: class {
+    func didRecieveUpdate(data: String)
 }
